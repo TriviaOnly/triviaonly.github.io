@@ -35,7 +35,6 @@ body {
   font-weight: 300;
 }
 
-
 @media (min-width: 768px) {
   .display-4 {
     font-size: 3rem;
@@ -133,6 +132,24 @@ body {
   margin: 0 auto;
   line-height: 1.6em;
   margin-bottom: 30px;
+}
+
+.highlight {
+  /*background: #FFF6EA;*/
+  text-decoration: underline;
+}
+
+.quote-content {
+  width: 200px;
+  color: #1b3a6f;
+  margin: 0 auto;
+  /*line-height: 1.6em;*/
+  margin-bottom: 30px;
+}
+
+.quote-highlight {
+  font-weight: 400;
+  background: rgba(223, 26, 44, 0.20);
 }
 
 /*
