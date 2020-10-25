@@ -1,13 +1,13 @@
 console.log("hi!")
 
 d3.queue()
-    .defer(d3.csv, "assets/data/frequent_rhymes_df.csv")
+    .defer(d3.csv, "assets/data/frequent_rhymns_df.csv")
     .await(ready);
 
 function ready(error, data){
     if(error) throw error;
 
-    // console.log(data.slice(0,100))
+    console.log(data.slice(0,100))
     // console.log(rhymes.length)
     // console.log(data.filter(function(d){return d.rhymns_this=='i'}))
 
@@ -51,7 +51,6 @@ function ready(error, data){
                 return d.song;
                 // console.log(d)
             });
-    
     
     };
 
