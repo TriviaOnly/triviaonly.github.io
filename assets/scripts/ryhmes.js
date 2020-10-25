@@ -1,7 +1,7 @@
 console.log("hi!")
 
 d3.queue()
-    .defer(d3.csv, "assets/data/frequent_rhymns_df.csv")
+    .defer(d3.csv, "assets/data/frequent_rhymns_df2.csv")
     .await(ready);
 
 function ready(error, data){
