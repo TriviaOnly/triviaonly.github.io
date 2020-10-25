@@ -30,27 +30,27 @@ function ready(error, data){
                 return "<span class='songs-rhymes-number'>" + (e+1) + ".</span>" +  "<span class='songs-rhymes-word'>" + d.rhymes_word + "</span>" + "<span class='songs-rhymes-this'>（" + d.rhymes_this + "）</span>" + "<span class='songs-rhymes-count'>" + d.count + "</span>";
             });
 
-        var V = Q.append("div").attr("class", "songs-rhymes-annotation");
+        // var V = Q.append("div").attr("class", "songs-rhymes-annotation");
 
-        V.append("svg").attr("xmlns", "http://www.w3.org/2000/svg").attr("width", 24).attr("height", 24).attr("viewBox", "0 0 24 24").attr("fill", "none").attr("stroke", "#29A9D1").attr("stroke-width", "2").attr("stroke-linecap", "round").attr("stroke-linejoin", "round").append("polyline").attr("points", "15 18 9 12 15 6");
+        // V.append("svg").attr("xmlns", "http://www.w3.org/2000/svg").attr("width", 24).attr("height", 24).attr("viewBox", "0 0 24 24").attr("fill", "none").attr("stroke", "#29A9D1").attr("stroke-width", "2").attr("stroke-linecap", "round").attr("stroke-linejoin", "round").append("polyline").attr("points", "15 18 9 12 15 6");
+
+        // // V.append("div")
+        // //     .attr("class","songs-rhymes-examples")
+        // //     .selectAll("p")
+        // //     .data(function(d){
+        // //         // var e = d.
+        // // });
 
         // V.append("div")
         //     .attr("class","songs-rhymes-examples")
         //     .selectAll("p")
-        //     .data(function(d){
-        //         // var e = d.
-        // });
-
-        V.append("div")
-            .attr("class","songs-rhymes-examples")
-            .selectAll("p")
-            .data(data).enter()
-            .append("span")
-            .attr("class","songs-rhymes-example")
-            .text(function(d){
-                return d.song;
-                // console.log(d)
-            });
+        //     .data(data).enter()
+        //     .append("span")
+        //     .attr("class","songs-rhymes-example")
+        //     .text(function(d){
+        //         return d.song;
+        //         // console.log(d)
+        //     });
     
     };
 
