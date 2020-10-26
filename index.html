@@ -182,6 +182,57 @@
                 color: rgba(223, 26, 44, 0.50);
             }
 
+            .songs-rhymes-examples{
+                position:absolute;
+                display:none;
+                right:0;
+                padding-left: 25px;
+                -webkit-transform:translate(100%,0);
+                -ms-transform:translate(100%,0);
+                transform:translate(100%,0);
+                top:5px
+            }
+
+            .songs-rhymes-examples-songs {
+                line-height:1.5;
+                max-width:250px;
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                -ms-flex-wrap:wrap;
+                flex-wrap:wrap
+            }
+
+            .songs-rhymes .songs-rhymes-div .songs-rhymes-annotation .songs-rhymes-examples-songs:before{
+                position:absolute;
+                content:'歌曲举例';
+                top:0;
+                left:0;
+                margin-top: 6px;
+                margin-left: 5px;
+                -webkit-transform:translate(20px,calc(-100% - 12px));
+                -ms-transform:translate(20px,calc(-100% - 12px));
+                transform:translate(20px,calc(-100% - 12px));
+                /*font-size:11px;
+                font-family:'Atlas Grotesk Web';*/
+                /*text-transform:uppercase;*/
+                color:#000;
+                width:100%;
+                text-align:left;
+                font-weight:500
+            }
+
+            /*.songs-rhymes-annotation svg{
+                width:20px;
+                height:20px
+            }*/
+
+            .songs-rhymes-annotation-highlited .songs-rhymes-examples{
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+            }
+
         </style>
     
     <!-- boilerplate.css -->
@@ -193,6 +244,7 @@
                 <div class="row flex-nowrap justify-content-between align-items-center">
                     <div class="col-6">
                         <a class="blog-header-logo text-dark" href="#">△ 零碎月报</a>
+                        <a class="text-dark" href="20201001.html" style="margin-left:20px">上一篇</a>
                         <a class="text-dark" href="about.html" style="margin-left:20px">关于我</a>
                         <!-- <a class="text-dark" href="history.html" style="margin-left:20px">往期查阅</a> -->
                     </div>
@@ -202,8 +254,8 @@
 
         <main role="main" class="container">
             <div class="blog-post">
-                <h2 class="blog-post-title">如何写一首随便的中文歌词？</h2>
-                <p class="blog-post-meta" style="font-family: roboto">vol. 202011</p>
+                <h2 class="blog-post-title">如何写一首随便的华语歌词？</h2>
+                <p class="blog-post-meta" style="font-family: roboto">vol. 202010(2)</p>
 
                 <div class="blog-content" style="margin-bottom:0px">
                     <p>我对华语歌曲总是比较苛刻，除了旋律要抓耳，歌词还得够吸引我，也就是说，歌词里讲的故事得戳中我的内心。</p>
