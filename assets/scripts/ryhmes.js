@@ -1,4 +1,4 @@
-console.log("hi!")
+console.log("Attribute to the pudding, quantifying emotional lyrics in emo rap.")
 
 d3.queue()
     .defer(d3.csv, "assets/data/frequent_rhymns_df2.csv")
