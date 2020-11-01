@@ -141,16 +141,15 @@ body {
 }
 
 .quote-content {
-  width: 200px;
-  color: #1b3a6f;
+  width: 250px;
   margin: 0 auto;
   /*line-height: 1.6em;*/
   margin-bottom: 30px;
 }
 
 .quote-highlight {
-  font-weight: 400;
-  background: rgba(223, 26, 44, 0.20);
+  /* font-weight: 400; */
+  background: #EEA3A3;
 }
 
 /*
@@ -306,16 +305,15 @@ body {
   }
   
   .quote-content {
-    width: 200px;
-    color: #1b3a6f;
+    width: 250px;
     margin: 0 auto;
     /*line-height: 1.6em;*/
     margin-bottom: 30px;
   }
   
   .quote-highlight {
-    font-weight: 400;
-    background: rgba(223, 26, 44, 0.20);
+    /* font-weight: 400; */
+    background: #EEA3A3;
   }
   
   /*
