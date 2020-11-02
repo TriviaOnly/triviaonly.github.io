@@ -48,7 +48,13 @@ function ready(error, data){
             .attr("class",function(d){
                 return "rect_" + d.data.group;
             })
-            .attr("fill", '#f0d4a2')
+            .attr("fill", function(d){
+                if (d.data.name =='里'){
+                    return "#f46d6d"
+                } else {
+                    return '#f0d4a2'
+                }
+            })
             .on("mouseover", function(d){
                 d3.select(this)
                 .transition()
@@ -62,9 +68,6 @@ function ready(error, data){
                 div.html("<span>韵脚：</span>" +d.data.group.split('.')[1] + "<br>" + "<span>例曲：</span>" + d.data.song)
                     .style("left", (d3.event.pageX - 150) + "px")
                     .style("top", (d3.event.pageY - 34) + "px");
-
-                console.log(d3.event.pageX)
-                console.log(d)
             })
             .on("mouseout", function(d){
                 d3.select(this)
