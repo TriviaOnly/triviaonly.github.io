@@ -48,6 +48,7 @@ function songDesktop(){
 
         root.sum(function(d){ return +d.value; });
 
+
         d3.treemap()
             .size([width, height])
             .padding(4)
@@ -99,18 +100,21 @@ function songDesktop(){
                     .duration('300')
                     .style("display","none");
                 })
-                .style("stroke", "black");
+                .style("stroke", "black")
+                .style("stroke-width","2px");
 
         svg
             .selectAll("text")
             .data(root.leaves())
             .enter()
             .append("text")
-                .attr("x", function(d){ return d.x0 + 5; })
-                .attr("y", function(d){ return d.y0 + 16; })
+                .attr("x", function(d){ 
+                    return d.x0 + 3; })
+                .attr("y", function(d){ 
+                    return d.y0 + 16; })
                 .text(function(d){ return d.data.name; })
-                .attr("font-size", "15px")
-                .attr("font-weight", "bolder")
+                .attr("font-size", "13px")
+                .attr("font-weight", "500")
                 .attr("stroke","white")
                 .attr("stroke-width",".21px")
                 .attr("fill", "black");
