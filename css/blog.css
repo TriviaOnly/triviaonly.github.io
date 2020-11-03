@@ -145,6 +145,7 @@ body {
   margin: 0 auto;
   /*line-height: 1.6em;*/
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .quote-highlight {
@@ -309,6 +310,7 @@ body {
     margin: 0 auto;
     /*line-height: 1.6em;*/
     margin-bottom: 30px;
+    margin-top: 30px;
   }
   
   .quote-highlight {
