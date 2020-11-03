@@ -60,6 +60,8 @@ function songDesktop(){
             .append("rect")
                 .attr("x", function(d){ return d.x0; })
                 .attr("y", function(d){ return d.y0; })
+                .attr("rx", 5)
+                .attr("ry", 5)
                 .attr("width", function(d){ return d.x1 - d.x0; })
                 .attr("height", function(d){ return d.y1 - d.y0; })
                 .attr("class",function(d){
@@ -69,7 +71,8 @@ function songDesktop(){
                     if (d.data.name =='里'){
                         return "#f46d6d"
                     } else {
-                        return '#f0d4a2'
+                        // return '#f0d4a2'
+                        return "white"
                     }
                 })
                 .on("mouseover", function(d){
@@ -104,7 +107,7 @@ function songDesktop(){
             .enter()
             .append("text")
                 .attr("x", function(d){ return d.x0 + 5; })
-                .attr("y", function(d){ return d.y0 + 20; })
+                .attr("y", function(d){ return d.y0 + 16; })
                 .text(function(d){ return d.data.name; })
                 .attr("font-size", "15px")
                 .attr("font-weight", "bolder")
