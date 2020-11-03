@@ -201,6 +201,7 @@ function songMobile(){
             .append("div")
             .attr("class","song-dropdown")
             .insert("select","svg")
+            .style("margin-top","5px")
             .on("change", dropdownChange);
 
         dropdown.selectAll("option")
