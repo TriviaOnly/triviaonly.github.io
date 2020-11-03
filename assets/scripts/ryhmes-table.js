@@ -107,7 +107,9 @@ function songDesktop(){
                 .attr("y", function(d){ return d.y0 + 20; })
                 .text(function(d){ return d.data.name; })
                 .attr("font-size", "15px")
-                .attr("font-weight", "400")
+                .attr("font-weight", "bolder")
+                .attr("stroke","white")
+                .attr("stroke-width",".21px")
                 .attr("fill", "black");
 
 

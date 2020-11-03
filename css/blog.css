@@ -149,8 +149,9 @@ body {
 }
 
 .quote-highlight {
-  /* font-weight: 400; */
-  background: #EEA3A3;
+  font-weight: 300;
+  background: rgb(244, 109, 109);
+  color: white;
 }
 
 /*
@@ -314,8 +315,9 @@ body {
   }
   
   .quote-highlight {
-    /* font-weight: 400; */
-    background: #EEA3A3;
+    font-weight: 400;
+    background: rgb(244, 109, 109);
+    color: white;
   }
   
   /*
