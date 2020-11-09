@@ -18,7 +18,7 @@
 }
 
 .blog-header-logo {
-  font-family: 'Noto Serif SC', serif;
+  font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
   font-weight: 800;
   font-size: 1.6rem;
 }
@@ -28,14 +28,14 @@
 }
 
 .blog-header-date {
-  font-family: 'Noto Serif SC', serif;
+  font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
   font-weight: 800;
   font-size: 2.5rem;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Serif SC', serif;
+  font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
 }
 
 .display-4 {
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
   font-weight: 300;
 }
 
@@ -187,7 +187,7 @@ body {
   }
   
   .blog-header-logo {
-    font-family: 'Noto Serif SC', serif;
+    font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
     font-weight: 800;
     font-size: 2.25rem;
   }
@@ -197,14 +197,14 @@ body {
   }
   
   .blog-header-date {
-    font-family: 'Noto Serif SC', serif;
+    font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
     font-weight: 800;
     font-size: 2.5rem;
   }
   
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Serif SC', serif;
+    font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
   }
   
   .display-4 {
@@ -212,7 +212,7 @@ body {
   }
   
   body {
-    font-family: 'Noto Sans SC', sans-serif;
+    font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
     font-weight: 300;
   }
   
