@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="icon" href="assets/favicon.ico">
+        <title>零碎月报</title>
+
+        <!-- 字体reference -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+        <link href="css/blog.css" rel="stylesheet">
+        <link href="css/scrolly.css" rel="stylesheet">
+
+        <style>
+            .chart-title{
+                font-size:30px;
+                text-align:center;
+                margin-bottom:0;
+                text-transform:lowercase
+            }
+
+            .chart-title-sub{
+                margin:0 auto;
+                font-size:1rem;
+                text-align:center;
+                font-style: italic;
+                margin-top:10px;
+            }
+
+            .songs-wrapper {
+                width: 100%;
+                overflow: hidden;
+                /* padding-bottom: 3rem; */
+            }
+
+            .songs-wrapper .see-more{
+                width: 200px;
+                margin: 0 auto;
+                margin-top: .5rem;
+                background: 0 0;
+            }
+
+            .songs-wrapper .see-more .p{
+                font-size: 1rem;
+            }
+
+            .songs-wrapper .see-more .div{
+                width: 40px;
+            }
+
+            .songs-rhymes{
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                margin:0 auto;
+                -webkit-box-align:center;
+                -ms-flex-align:center;
+                align-items:center;
+                -webkit-box-orient:horizontal;
+                -webkit-box-direction:normal;
+                -ms-flex-direction:row;
+                flex-direction:row;
+                width:150px;
+                -ms-flex-wrap:wrap;
+                flex-wrap:wrap;
+                margin-top:3rem;
+                margin-bottom:3rem
+            }
+
+            .songs-rhymes .songs-rhymes-div{
+                width:100%;
+                margin:0;
+                cursor:hand;
+                cursor:pointer;
+                position:relative
+            }
+
+            .songs-rhymes .songs-rhymes-div:hover{
+                background:#efefef;
+            }
+
+            .songs-rhymes-number {
+                color:#999;
+                -webkit-user-select:none;
+                -moz-user-select:none;
+                -ms-user-select:none;
+                user-select:none;
+                font-weight:500;
+                font-size:1rem;
+                width:20px;
+                margin-right:4px;
+                position:relative;
+                display:inline-block;
+                text-align:right
+            }
+
+            .songs-rhymes-word{
+                color:#111;
+                font-size:1rem;
+                -webkit-user-select:none;
+                -moz-user-select:none;
+                -ms-user-select:none;
+                user-select:none;
+                font-weight:400
+            }
+
+            .songs-rhymes-this{
+                color:#111;
+                font-size:1rem;
+                -webkit-user-select:none;
+                -moz-user-select:none;
+                -ms-user-select:none;
+                user-select:none;
+                font-weight:400
+            }
+
+            .songs-rhymes-count{
+                color:#666;
+                font-size:1rem;
+                font-weight:500;
+                -webkit-user-select:none;
+                -moz-user-select:none;
+                -ms-user-select:none;
+                user-select:none;
+                position:absolute;
+                line-height:28px;
+                right:0;
+                top:0
+            }
+
+            .songs-rhymes-content{
+                margin: 0;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                margin-right: 0;
+                font-weight: 500;
+                font-size: 1rem;
+                color: #18604f;
+                position: relative;
+                padding-bottom: 2px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .songs-rhymes
+            .songs-rhymes-div:first-of-type
+            .songs-rhymes-content:before{
+                content: '押韵词';
+                position: absolute;
+                font-weight: 500;
+                -webkit-transform:translate(25px,-100%);
+                -ms-transform:translate(25px,-100%);
+                transform:translate(25px,-100%);
+                text-align:left;
+                width:70px;
+                font-size:1rem;
+                color: rgba(223, 26, 44, 0.50);
+            }
+
+            .songs-rhymes
+            .songs-rhymes-div:first-of-type
+            .songs-rhymes-count:after{
+                content: '使用频率';
+                position:absolute;
+                font-weight:500;
+                -webkit-transform:translate(-100%,-100%);
+                -ms-transform:translate(-100%,-100%);
+                transform:translate(-100%,-100%);
+                text-align:right;
+                width:70px;
+                font-size:1rem;
+                color: rgba(223, 26, 44, 0.50);
+            }
+
+            .songs-rhymes-examples{
+                position:absolute;
+                display:none;
+                right:0;
+                padding-left: 10px;
+                padding-right: 45px;
+                -webkit-transform:translate(100%,0);
+                -ms-transform:translate(100%,0);
+                transform:translate(100%,0);
+                top:5px
+            }
+
+            .songs-rhymes-examples-songs {
+                line-height:1.5;
+                max-width:250px;
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                -ms-flex-wrap:wrap;
+                flex-wrap:wrap
+            }
+
+            .songs-rhymes .songs-rhymes-div .songs-rhymes-annotation .songs-rhymes-examples-songs:before{
+                position:absolute;
+                content:'歌曲举例';
+                top:0;
+                left:0;
+                margin-top: 6px;
+                margin-left: 5px;
+                -webkit-transform:translate(20px,calc(-100% - 12px));
+                -ms-transform:translate(20px,calc(-100% - 12px));
+                transform:translate(20px,calc(-100% - 12px));
+                /*font-size:11px;
+                font-family:'Atlas Grotesk Web';*/
+                /*text-transform:uppercase;*/
+                color:#000;
+                width:100%;
+                text-align:left;
+                font-weight:500
+            }
+
+            /*.songs-rhymes-annotation svg{
+                width:20px;
+                height:20px
+            }*/
+
+            .songs-rhymes-annotation-highlited .songs-rhymes-examples{
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+            }
+
+            .songs-treemap {
+                display: none;
+            }
+
+
+            /* for desktop */
+            @media only screen and (min-width: 768px) {
+
+                .songs-rhymes-examples{
+                    position:absolute;
+                    display:none;
+                    right:0;
+                    padding-left: 25px;
+                    -webkit-transform:translate(100%,0);
+                    -ms-transform:translate(100%,0);
+                    transform:translate(100%,0);
+                    top:5px
+                }
+
+
+                .songs-rhymes{
+                    width:200px;
+                }
+
+                .song-rhymes-tooltip {
+                    position: absolute;
+                    width: 120px;
+                    background-color: black;
+                    padding-left: 5px;
+                    color: #fff;
+                    text-align: left;
+                    border-radius: 6px;
+                    z-index:1;
+                }
+
+                .songs-wrapper {
+                    display: none;
+                }
+
+                .shadow {
+                    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+                    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+                    /* Similar syntax to box-shadow */
+                }
+
+            }
+
+        </style>
+    
+    <!-- boilerplate.css -->
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="row">
+                        <div class="col">
+                            <a class="blog-header-logo text-dark" href="index.html">
+                                △ 零碎月报
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="text-dark nav-item" href="20201001.html">
+                                上一篇
+                            </a>
+                            <a class="text-dark nav-item" href="about.html" style="margin-left:20px">
+                                关于我
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <main role="main" class="container">
+            <div class="blog-post">
+                <h2 class="blog-post-title">如何写一首烂大街的华语歌？</h2>
+                <p class="blog-post-meta" style="font-family: roboto">vol. 202010(2)</p>
+
+                <div class="blog-content" style="margin-bottom:0px">
+                    <p>我对华语歌曲总是比较苛刻，除了旋律要抓耳，歌词还得够吸引我，也就是说，歌词里讲的故事得戳中我的内心。</p>
+
+                    <p>但随着华语乐坛对唱片越来越不重视，现在很少能找到一张像以前那样有主题、在讲故事的专辑。更糟糕的是，许多公共场所播放的当下流行歌曲，乍一听旋律还行，一仔细欣赏，发现歌词就跟从“押韵助手”里直接生成的一样不走心（当然不能否认，以前的唱片公司为了凑足歌曲数量，也塞过一些很白目的歌在专辑里）。</p>
+
+                    <p>随手举一个我认为不够走心的歌词案例：</p>
+
+                </div>
+                <!-- end of blog content -->
+
+                <!-- begin of quote-->
+                <div class="quote-content">
+                    <p>爱<span class="quote-highlight">别离</span>，痛到<span class="quote-highlight">心悸</span>，下一秒<span class="quote-highlight">窒息</span></p>
+                    <p>快弥漫双眼，湖水覆盖的<span class="quote-highlight">回忆</span></p>
+                    <p>爱<span class="quote-highlight">别离</span>，眼泪落下越来越<span class="quote-highlight">清晰</span></p>
+                    <p>有多么<span class="quote-highlight">爱你</span>，幸福像梦境逝去</p>
+                </div>
+                <!-- end of blog quote -->
+
+                <!-- begin of content -->
+                <div class="blog-content">
+                    <p>听起来很随便的歌词，要么是不知所云，要么就是陈词滥调。有些歌，即使是第一次听到，稍微听那么几句，我就能根据韵脚猜出下面跟着的词儿（相信很多人也可以）。可谓是非常没有诚意的作词了。</p>
+
+                    <p>借助dengxiuqi在github上发布的一个<a class="text-dark highlight" href="https://github.com/dengxiuqi/ChineseLyrics">中文歌词数据库</a>，我想看看华语歌词里最常见的规律。</p>
+                </div>
+                <!-- end of blog content -->
+
+                <!-- table view -->
+                <!-- begin of song wrapper -->
+                <div class="songs-wrapper">
+                        <p class="chart-title">华语歌曲最常见的押韵</p>
+                        <div class="chart-title-sub"></div>
+                        <div class="songs-rhymes"></div>
+                </div>
+                <!-- end of song wrapper -->
+
+                <!-- interative graphic view -->
+                <div class="songs-treemap">
+                        <div class="chart-title">华语歌曲最常见的押韵</div>
+                        <div class="chart-title-sub">移动鼠标查看例曲</div>
+                </div>
+
+               <!-- begin of content -->
+                <div class="blog-content" style="margin-top:20px">
+                    <p>希望能听到更多让人惊喜的歌词。最近很喜欢的一首是田馥甄的《无人知晓》，让我想到也是讲单恋的杨丞琳的《点水》。你看，即便是同样主题的歌，也有不同的叙事和比喻手法，写词人的创作能力真的可以很棒。<img src="assets/img/M.png" style="width: 15px;" /></p>
+                </div>
+
+
+            </div>
+        </main>
+
+        <footer class="blog-footer">
+            <p>
+                Copyright © 2020-Present TriviaOnly. All rights reserved.
+            </p>
+        </footer>
+
+        <script src='assets/scripts/d3.v4.12.0+jetpack.min.js'></script>
+        <script src="assets/scripts/ryhmes-table.js"></script>
+    
+    </body>
+</html>

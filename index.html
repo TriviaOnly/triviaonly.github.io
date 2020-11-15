@@ -18,9 +18,85 @@
         <!-- Custom styles for this template -->
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
         <link href="css/blog.css" rel="stylesheet">
-        <link href="css/scrolly.css" rel="stylesheet">
+        <!-- <link href="css/scrolly.css" rel="stylesheet"> -->
 
         <style>
+            #scrolly {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                margin-top: 50px;
+                display: flex;
+                /* background-color: #f3f3f3; */
+                padding: 1rem;
+            }
+
+            #scrolly > * {
+                -webkit-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+
+            article {
+                position: relative;
+                padding: 0 1rem;
+                max-width: 20rem;
+            }
+
+            figure {
+                position: -webkit-sticky;
+                position: sticky;
+                width: 100%;
+                margin: 0;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                /* background-color: #8a8a8a; */
+                z-index: 0;
+            }
+
+            figure p {
+                text-align: center;
+                padding: 1rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -moz-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                font-size: 8rem;
+                font-weight: 900;
+                /* color: #fff; */
+            }
+
+            .step {
+                margin: 0 auto 2rem auto;
+                /* background-color: #3b3b3b;
+                color: #fff; */
+            }
+
+            .step:last-child {
+                margin-bottom: 0;
+            }
+
+            .step.is-active {
+                /* background-color: goldenrod;
+                color: #3b3b3b; */
+            }
+
+            .step p {
+                text-align: left;
+                /* padding: 1rem;
+                font-size: 1.5rem; */
+            }
+
+            .song-freq-chart-axis text {
+                font-family: 'Atlas Grotesk Web','Atlas Grotesk Web',Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                fill: #888;
+            }
+
             .chart-title{
                 font-size:30px;
                 text-align:center;
@@ -28,257 +104,15 @@
                 text-transform:lowercase
             }
 
-            .chart-title-sub{
-                margin:0 auto;
-                font-size:1rem;
-                text-align:center;
-                font-style: italic;
-                margin-top:10px;
+            #songs_frequency_all {
+                margin-top: 20px
             }
 
-            .songs-wrapper {
-                width: 100%;
-                overflow: hidden;
-                /* padding-bottom: 3rem; */
-            }
-
-            .songs-wrapper .see-more{
-                width: 200px;
-                margin: 0 auto;
-                margin-top: .5rem;
-                background: 0 0;
-            }
-
-            .songs-wrapper .see-more .p{
-                font-size: 1rem;
-            }
-
-            .songs-wrapper .see-more .div{
-                width: 40px;
-            }
-
-            .songs-rhymes{
-                display:-webkit-box;
-                display:-ms-flexbox;
-                display:flex;
-                margin:0 auto;
-                -webkit-box-align:center;
-                -ms-flex-align:center;
-                align-items:center;
-                -webkit-box-orient:horizontal;
-                -webkit-box-direction:normal;
-                -ms-flex-direction:row;
-                flex-direction:row;
-                width:150px;
-                -ms-flex-wrap:wrap;
-                flex-wrap:wrap;
-                margin-top:3rem;
-                margin-bottom:3rem
-            }
-
-            .songs-rhymes .songs-rhymes-div{
-                width:100%;
-                margin:0;
-                cursor:hand;
-                cursor:pointer;
-                position:relative
-            }
-
-            .songs-rhymes .songs-rhymes-div:hover{
-                background:#efefef;
-            }
-
-            .songs-rhymes-number {
-                color:#999;
-                -webkit-user-select:none;
-                -moz-user-select:none;
-                -ms-user-select:none;
-                user-select:none;
-                font-weight:500;
-                font-size:1rem;
-                width:20px;
-                margin-right:4px;
-                position:relative;
-                display:inline-block;
-                text-align:right
-            }
-
-            .songs-rhymes-word{
-                color:#111;
-                font-size:1rem;
-                -webkit-user-select:none;
-                -moz-user-select:none;
-                -ms-user-select:none;
-                user-select:none;
-                font-weight:400
-            }
-
-            .songs-rhymes-this{
-                color:#111;
-                font-size:1rem;
-                -webkit-user-select:none;
-                -moz-user-select:none;
-                -ms-user-select:none;
-                user-select:none;
-                font-weight:400
-            }
-
-            .songs-rhymes-count{
-                color:#666;
-                font-size:1rem;
-                font-weight:500;
-                -webkit-user-select:none;
-                -moz-user-select:none;
-                -ms-user-select:none;
-                user-select:none;
-                position:absolute;
-                line-height:28px;
-                right:0;
-                top:0
-            }
-
-            .songs-rhymes-content{
-                margin: 0;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                margin-right: 0;
+            .song-freq-chartAll-axis text{
+                font-family: 'Atlas Grotesk Web','Atlas Grotesk Web',Helvetica,Arial,sans-serif;
+                font-size: 9px;
                 font-weight: 500;
-                font-size: 1rem;
-                color: #18604f;
-                position: relative;
-                padding-bottom: 2px;
-                border-bottom: 1px solid #ccc;
-            }
-
-            .songs-rhymes
-            .songs-rhymes-div:first-of-type
-            .songs-rhymes-content:before{
-                content: '押韵词';
-                position: absolute;
-                font-weight: 500;
-                -webkit-transform:translate(25px,-100%);
-                -ms-transform:translate(25px,-100%);
-                transform:translate(25px,-100%);
-                text-align:left;
-                width:70px;
-                font-size:1rem;
-                color: rgba(223, 26, 44, 0.50);
-            }
-
-            .songs-rhymes
-            .songs-rhymes-div:first-of-type
-            .songs-rhymes-count:after{
-                content: '使用频率';
-                position:absolute;
-                font-weight:500;
-                -webkit-transform:translate(-100%,-100%);
-                -ms-transform:translate(-100%,-100%);
-                transform:translate(-100%,-100%);
-                text-align:right;
-                width:70px;
-                font-size:1rem;
-                color: rgba(223, 26, 44, 0.50);
-            }
-
-            .songs-rhymes-examples{
-                position:absolute;
-                display:none;
-                right:0;
-                padding-left: 10px;
-                padding-right: 45px;
-                -webkit-transform:translate(100%,0);
-                -ms-transform:translate(100%,0);
-                transform:translate(100%,0);
-                top:5px
-            }
-
-            .songs-rhymes-examples-songs {
-                line-height:1.5;
-                max-width:250px;
-                display:-webkit-box;
-                display:-ms-flexbox;
-                display:flex;
-                -ms-flex-wrap:wrap;
-                flex-wrap:wrap
-            }
-
-            .songs-rhymes .songs-rhymes-div .songs-rhymes-annotation .songs-rhymes-examples-songs:before{
-                position:absolute;
-                content:'歌曲举例';
-                top:0;
-                left:0;
-                margin-top: 6px;
-                margin-left: 5px;
-                -webkit-transform:translate(20px,calc(-100% - 12px));
-                -ms-transform:translate(20px,calc(-100% - 12px));
-                transform:translate(20px,calc(-100% - 12px));
-                /*font-size:11px;
-                font-family:'Atlas Grotesk Web';*/
-                /*text-transform:uppercase;*/
-                color:#000;
-                width:100%;
-                text-align:left;
-                font-weight:500
-            }
-
-            /*.songs-rhymes-annotation svg{
-                width:20px;
-                height:20px
-            }*/
-
-            .songs-rhymes-annotation-highlited .songs-rhymes-examples{
-                display:-webkit-box;
-                display:-ms-flexbox;
-                display:flex;
-            }
-
-            .songs-treemap {
-                display: none;
-            }
-
-
-            /* for desktop */
-            @media only screen and (min-width: 768px) {
-
-                .songs-rhymes-examples{
-                    position:absolute;
-                    display:none;
-                    right:0;
-                    padding-left: 25px;
-                    -webkit-transform:translate(100%,0);
-                    -ms-transform:translate(100%,0);
-                    transform:translate(100%,0);
-                    top:5px
-                }
-
-
-                .songs-rhymes{
-                    width:200px;
-                }
-
-                .song-rhymes-tooltip {
-                    position: absolute;
-                    width: 120px;
-                    background-color: black;
-                    padding-left: 5px;
-                    color: #fff;
-                    text-align: left;
-                    border-radius: 6px;
-                    z-index:1;
-                }
-
-                .songs-wrapper {
-                    display: none;
-                }
-
-                .shadow {
-                    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-                    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-                    /* Similar syntax to box-shadow */
-                }
-
+                fill: #888;
             }
 
         </style>
@@ -297,7 +131,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a class="text-dark nav-item" href="20201001.html">
+                            <a class="text-dark nav-item" href="20201030.html">
                                 上一篇
                             </a>
                             <a class="text-dark nav-item" href="about.html" style="margin-left:20px">
@@ -311,64 +145,108 @@
 
         <main role="main" class="container">
             <div class="blog-post">
-                <h2 class="blog-post-title">如何写一首烂大街的华语歌？</h2>
-                <p class="blog-post-meta" style="font-family: roboto">vol. 202010(2)</p>
+                <h2 class="blog-post-title">喜欢的华语歌越来越少，但发歌的频率却更高了</h2>
+                <p class="blog-post-meta" style="font-family: roboto">vol. 202011</p>
 
                 <div class="blog-content" style="margin-bottom:0px">
-                    <p>我对华语歌曲总是比较苛刻，除了旋律要抓耳，歌词还得够吸引我，也就是说，歌词里讲的故事得戳中我的内心。</p>
+                    <p>又是一期“吐槽”华语歌曲。</p>
 
-                    <p>但随着华语乐坛对唱片越来越不重视，现在很少能找到一张像以前那样有主题、在讲故事的专辑。更糟糕的是，许多公共场所播放的当下流行歌曲，乍一听旋律还行，一仔细欣赏，发现歌词就跟从“押韵助手”里直接生成的一样不走心（当然不能否认，以前的唱片公司为了凑足歌曲数量，也塞过一些很白目的歌在专辑里）。</p>
+                    <p>自成年之后，因为收听习惯变化等原因，新入股的华语歌曲越来越少，接触到的新歌要么来自以前就习惯收听的艺人，要么是综艺听到的单曲，很少能再被某位新歌手圈粉。</p>
 
-                    <p>随手举一个我认为不够走心的歌词案例：</p>
+                    <p>让我惊讶的是，虽然在我眼中，华语歌坛正在走下坡路，但整理完每个时代的代表歌手发片/发歌数据后才发现，现在的歌手也并没有因此而懈怠，发歌的频率反而因为互联网应用的发展而变得越来越高。</p>
 
                 </div>
                 <!-- end of blog content -->
 
-                <!-- begin of quote-->
-                <div class="quote-content">
-                    <p>爱<span class="quote-highlight">别离</span>，痛到<span class="quote-highlight">心悸</span>，下一秒<span class="quote-highlight">窒息</span></p>
-                    <p>快弥漫双眼，湖水覆盖的<span class="quote-highlight">回忆</span></p>
-                    <p>爱<span class="quote-highlight">别离</span>，眼泪落下越来越<span class="quote-highlight">清晰</span></p>
-                    <p>有多么<span class="quote-highlight">爱你</span>，幸福像梦境逝去</p>
+                <!-- data viz -->
+                <section id="scrolly">
+                    <article>
+                        <div class="step" data-step="1">
+                            <!-- <p>STEP 1</p> -->
+                            <p>以2000年出道的周杰伦为例。</p>
+                            <p class="step-one-text1" style="opacity:0">左边代表周杰伦每年发歌的总数。</p>
+                            
+                        
+                        </div>
+
+                        <div class="step" data-step="2">
+                            <!-- <p>STEP 2</p> -->
+                            <p>周董最活跃的早几年，2000年到2009年，他基本每年都会发表10首以上的歌，包括新曲和演唱会版本。</p>
+                            
+                            <p>即便在功成名就后，他只要发歌，一般都会以专辑形式发布。</p>
+                            <!-- <p>港台歌星和大陆歌星的习惯可能不太一样。以同样2000年左右出道的张杰为例。</p> -->
+                        
+                        </div>
+
+                        <div class="step" data-step="3">
+                            <!-- <p>STEP 3</p> -->
+                            <p>相比他的发歌数量，他的发歌频率并不高，最多最多一年也就发3次。</p>
+                        
+                        
+                        </div>
+
+                        <div class="step" data-step="4">
+                            <p>这似乎是台湾歌坛的习惯，不仅仅是周董这样的超级顶流会以此频率发歌。</p>
+                        </div>
+
+                        <div class="step" data-step="5">
+                            <p>但大陆这边的歌手则不太一样。以较早出道的张杰为例，早期他还遵循传统发歌规律，但2010年之后，他也逐步开启了”散装发歌“的模式。</p>
+                        </div>
+
+                        <div class="step" data-step="6">
+                            <p>这种”散装发歌“的趋势在大陆选秀出道的歌手里，就更加明显了。</p>
+
+                            <p>比如，近年深受大家喜欢的周深，就没什么出专辑的机会，每次都是一首一首单曲地出，或是影视，或是综艺节目的翻唱等等。</p>
+                        </div>
+
+
+                        <div class="step" data-step="7">
+                                <p>我还挑选了一些其他的歌手。</p>
+                                <p>↓↓↓↓↓</p>
+                        </div>
+                    </article>
+            
+                    <figure>
+                        <!-- <p>0</p> -->
+                        <div id="songs_frequency"></div>
+                        <!-- <div id="songs_frequency2"></div>
+                        <div id="songs_frequency3"></div>
+                        <div id="songs_frequency3"></div> -->
+                    </figure>
+                </section>
+
+                <div id="songs_frequency_all">
+                        <div class="chart-title">不同年代的华语歌手发歌数量和频率</div>
                 </div>
-                <!-- end of blog quote -->
+                
+                <div class="blog-content" style="margin-bottom:0px; margin-top: 20px">  
 
-                <!-- begin of content -->
-                <div class="blog-content">
-                    <p>听起来很随便的歌词，要么是不知所云，要么就是陈词滥调。有些歌，即使是第一次听到，稍微听那么几句，我就能根据韵脚猜出下面跟着的词儿（相信很多人也可以）。可谓是非常没有诚意的作词了。</p>
+                        <p>当然，每个时代有每个时代的品味。发歌模式的改变，不代表歌曲质量一定在下降。我的听歌喜好也绝对不能代表普罗大众。</p>
 
-                    <p>借助dengxiuqi在github上发布的一个<a class="text-dark highlight" href="https://github.com/dengxiuqi/ChineseLyrics">中文歌词数据库</a>，我想看看华语歌词里最常见的规律。</p>
+                        <p>但不得不说，我还是非常怀念一整张专辑的主题策划，能让歌手和作词作曲人拥有更多的表达空间。<img src="assets/img/M.png" style="width: 15px;" /></p>
+    
                 </div>
-                <!-- end of blog content -->
 
-                <!-- table view -->
-                <!-- begin of song wrapper -->
-               <div class="songs-wrapper">
-                    <p class="chart-title">华语歌曲最常见的押韵</p>
-                    <div class="chart-title-sub"></div>
-                    <div class="songs-rhymes"></div>
-               </div>
-                <!-- end of song wrapper -->
+            
+                <!-- <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/56b13356149525.59a3325814a29.gif"/> -->
 
-                <!-- interative graphic view -->
-               <div class="songs-treemap">
-                    <div class="chart-title">华语歌曲最常见的押韵</div>
-                    <div class="chart-title-sub">移动鼠标查看例曲</div>
-               </div>
 
 
 
             </div>
         </main>
 
+        
         <footer class="blog-footer">
             <p>
                 Copyright © 2020-Present TriviaOnly. All rights reserved.
             </p>
         </footer>
 
+        <script src="assets/scripts/stickyfill.min.js"></script>
+        <script src="assets/scripts/scrollama.min.js"></script>
         <script src='assets/scripts/d3.v4.12.0+jetpack.min.js'></script>
-        <script src="assets/scripts/ryhmes-table.js"></script>
+        <script src="assets/scripts/songs-frequency.js"></script>
     
     </body>
 </html>
