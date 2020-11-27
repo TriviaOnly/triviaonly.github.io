@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+  background-color: #f3f3f3;
   font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
   font-weight: 300;
 }
@@ -212,6 +213,7 @@ body {
   }
   
   body {
+    background-color: #f3f3f3;
     font-family: "Noto Serif","PT Serif","source-han-serif-sc",Songti SC,serif!important;
     font-weight: 300;
   }

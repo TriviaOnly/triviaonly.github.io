@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="TriviaOnly">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="">
 
         <link rel="icon" href="assets/favicon.ico">
@@ -23,29 +24,27 @@
         <style>
             #scrolly {
                 position: relative;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                margin-top: 50px;
-                display: flex;
-                /* background-color: #f3f3f3; */
+                background-color: #f3f3f3;
                 padding: 1rem;
             }
 
-            #scrolly > * {
+            /* #scrolly > * {
                 -webkit-box-flex: 1;
                 -ms-flex: 1;
                 flex: 1;
-            }
+            } */
 
             article {
                 position: relative;
-                padding: 0 1rem;
-                max-width: 20rem;
+                padding: 0;
+                max-width: 30rem;
+                margin: 0 auto;
             }
 
             figure {
                 position: -webkit-sticky;
                 position: sticky;
+                left: 0;
                 width: 100%;
                 margin: 0;
                 -webkit-transform: translate3d(0, 0, 0);
@@ -80,6 +79,7 @@
             }
 
             .step.is-active {
+                
                 /* background-color: goldenrod;
                 color: #3b3b3b; */
             }
@@ -90,11 +90,19 @@
                 font-size: 1.5rem; */
             }
 
+            .step-text-container {
+                background-color: #fff;
+                border: 1px solid #c9c9c9;
+                -webkit-box-shadow: 0 1rem 2rem rgba(201,201,201,.3);
+                box-shadow: 0 1rem 2rem rgba(201,201,201,.3);
+                padding: 2rem 1rem;
+            }
+
             .song-freq-chart-axis text {
-                font-family: 'Atlas Grotesk Web','Atlas Grotesk Web',Helvetica,Arial,sans-serif;
-                font-size: 14px;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 15px;
                 font-weight: 500;
-                fill: #888;
+                fill: #000;
             }
 
             .chart-title{
@@ -104,15 +112,19 @@
                 text-transform:lowercase
             }
 
+            .rightFreq{
+                font-family: 'Roboto Mono', monospace;
+            }
+
             #songs_frequency_all {
                 margin-top: 20px
             }
 
             .song-freq-chartAll-axis text{
-                font-family: 'Atlas Grotesk Web','Atlas Grotesk Web',Helvetica,Arial,sans-serif;
+                font-family: 'Roboto Mono', monospace;
                 font-size: 9px;
                 font-weight: 500;
-                fill: #888;
+                fill: #000;
             }
 
         </style>
@@ -146,7 +158,7 @@
         <main role="main" class="container">
             <div class="blog-post">
                 <h2 class="blog-post-title">喜欢的华语歌越来越少<br>但歌手们发歌的频率却更高了</h2>
-                <p class="blog-post-meta" style="font-family: roboto">vol. 202011</p>
+                <p class="blog-post-meta" style="font-family: 'Roboto Mono', monospace;">vol. 202011</p>
 
                 <div class="blog-content" style="margin-bottom:0px">
                     <p>又是一期“吐槽”华语歌曲。</p>
@@ -160,60 +172,71 @@
 
                 <!-- data viz -->
                 <section id="scrolly">
+                    <figure>
+                        <div id="songs_frequency"></div>
+                    </figure>
+
                     <article>
                         <div class="step" data-step="1">
                             <!-- <p>STEP 1</p> -->
-                            <p>以2000年出道的周杰伦为例。</p>
-                            <p class="step-one-text1" style="opacity:0">左边代表周杰伦每年发歌的总数。</p>
-                            
-                        
+                            <div class="step-text-container">
+                                <p>以2000年出道的周杰伦为例。</p>
+                                <!-- <p class="step-one-text1" style="opacity:0">左边代表周杰伦每年发歌的总数。</p> -->
+                            </div>
                         </div>
 
                         <div class="step" data-step="2">
                             <!-- <p>STEP 2</p> -->
-                            <p>周董最活跃的早几年，2000年到2009年，他基本每年都会发表10首以上的歌，包括新曲和演唱会版本。</p>
-                            
-                            <p>即便在功成名就后，他只要发歌，一般都会以专辑形式发布。</p>
+
+                            <div class="step-text-container">
+                                <p>周董最活跃的早几年，2000年到2009年，他基本每年都会发表10首以上的歌，包括新曲和演唱会版本。</p>
+                                
+                                <p>即便在功成名就后，他只要发歌，一般都会以专辑形式发布。</p>
+                            </div>
                             <!-- <p>港台歌星和大陆歌星的习惯可能不太一样。以同样2000年左右出道的张杰为例。</p> -->
                         
                         </div>
 
                         <div class="step" data-step="3">
                             <!-- <p>STEP 3</p> -->
-                            <p>相比他的发歌数量，他的发歌频率并不高，最多最多一年也就发3次。</p>
+                            <div class="step-text-container">
+                                <p>相比他的发歌数量，他的发歌频率并不高，最多最多一年也就发3次。</p>
+                            </div>
                         
                         
                         </div>
 
                         <div class="step" data-step="4">
-                            <p>这似乎是台湾歌坛的习惯，不仅仅是周董这样的超级顶流会以此频率发歌。</p>
+                            <div class="step-text-container">
+                                <p>这似乎是台湾歌坛的习惯，不仅仅是周董这样的超级顶流会以此频率发歌。</p>
+                            </div>
                         </div>
 
                         <div class="step" data-step="5">
-                            <p>但大陆这边的歌手则不太一样。以较早出道的张杰为例，早期他还遵循传统发歌规律，但2010年之后，他也逐步开启了”散装发歌“的模式。</p>
+                            <div class="step-text-container">
+                                <p>但大陆这边的歌手则不太一样。以较早出道的张杰为例，早期他还遵循传统发歌规律，但2010年之后，他也逐步开启了”散装发歌“的模式。</p>
+                            </div>
                         </div>
 
                         <div class="step" data-step="6">
-                            <p>这种”散装发歌“的趋势在大陆选秀出道的歌手里，就更加明显了。</p>
+                            <div class="step-text-container">
+                                <p>这种”散装发歌“的趋势在大陆选秀出道的歌手里，就更加明显了。</p>
 
-                            <p>比如，近年深受大家喜欢的周深，就没什么出专辑的机会，每次都是一首一首单曲地出，或是影视，或是综艺节目的翻唱等等。</p>
+                                <p>比如，近年深受大家喜欢的周深，就没什么出专辑的机会，每次都是一首一首单曲地出，或是影视，或是综艺节目的翻唱等等。</p>
+                            </div>
                         </div>
 
 
                         <div class="step" data-step="7">
+                            <div class="step-text-container">
                                 <p>我还挑选了一些其他的歌手。</p>
                                 <p>↓↓↓↓↓</p>
+                            </div>
                         </div>
                     </article>
-            
-                    <figure>
-                        <!-- <p>0</p> -->
-                        <div id="songs_frequency"></div>
-                        <!-- <div id="songs_frequency2"></div>
-                        <div id="songs_frequency3"></div>
-                        <div id="songs_frequency3"></div> -->
-                    </figure>
                 </section>
+
+                <section id="outro"></section>
 
                 <div id="songs_frequency_all">
                         <div class="chart-title">不同年代的华语歌手发歌数量和频率</div>
