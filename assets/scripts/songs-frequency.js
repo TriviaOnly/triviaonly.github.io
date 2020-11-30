@@ -124,7 +124,6 @@ if (isMobile){
                 */
                var svg = d3.select("#songs_frequency")
                .append("svg")
-               .attr("class","songs_frequency_chart_01")
                .attr("width", "1000px")
                .attr("height", "1000px")
                .append("g")
@@ -231,10 +230,8 @@ if (isMobile){
                     // console.log(y, rad)
 
                     var circles = halfcircle(x,y,rad, innerRad)
-                        .style('opacity', 0)
-                        .transition()
-                        .duration(1000)
-                        .style('opacity',0.5)
+                        .attr("class","upsideCircle")
+                        .style('opacity', 0.1)
                         .style("stroke","#fff")
                         .style("fill","#070d59");
 
@@ -243,6 +240,188 @@ if (isMobile){
                     // } else if (rad >= 50){
                     //     circles.style("fill","#1717ff");
                     // }
+                });
+                // https://bl.ocks.org/gka/1623794a83a5daf18df0d93aa815fca7
+
+
+                // Upside - label
+                var leftLabel = svg.select("text.leftLabel");
+
+                if(leftLabel.empty()){
+                leftLabel = svg.append("text")
+                    .attr("x", -100)
+                    .attr("y", function(d){
+                        return 100;
+                    })
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888");
+                }
+
+                leftLabel.text("发行频率");
+
+                // line between axis
+                svg.append("line")
+                    .style("stroke","black")
+                    .attr("x1", -20)
+                    .attr("x2", 560)
+                    .attr("y1", 100)
+                    .attr("y2",100)
+                    .style("stroke-width", "2px")
+                    .style("fill","#000");
+
+                svg.append("line")
+                    .style("stroke","black")
+                    .attr("x1", -20)
+                    .attr("x2", 560)
+                    .attr("y1", 150)
+                    .attr("y2",150)
+                    .style("stroke-width", "2px")
+                    .style("fill","#000");
+            }
+            // end of update bar (the first chart)
+
+
+
+            // update charts after first chart
+            function updateBarAfter(freq,num){
+
+                // console.log(freq)
+                console.log(num)
+
+                // scale
+                var x = d3.scaleBand()
+                    .range([0, chartHeight])
+                    .domain([2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019])
+                    .padding(.3);
+
+                var xLeft = d3.scaleLinear()
+                    .domain([0, 100])
+                    .range([0, chartWidth]);
+
+                var y = d3.scaleLinear()
+                    .domain([0, 30])
+                    .range([0, chartHeight/2]);                
+
+                /*
+                Downside chart
+                */
+               var svg = d3.select("#songs_frequency")
+               .append("svg")
+               .attr("width", "1000px")
+               .attr("height", "1000px")
+               .append("g")
+               .attr("transform", function(d){
+                   return "translate(300,50)"
+               });
+
+
+               svg.selectAll(".bar")
+                    .data(num[0].values)
+                    .enter()
+                    .append("g")
+                    .merge(svg)
+                    .attr("class","downsideBar")
+                    .each(updateBars);
+
+
+                // Downside - Label
+                var rightLabel = svg.select("text.rightLabel");
+
+                if(rightLabel.empty()){
+                    rightLabel = svg.append("text")
+                        .attr("x", -100)
+                        .attr("y", function(d){
+                            return 159;
+                        })
+                        .style("font-weight","regular")
+                        .style("text-anchor", "left")
+                        .style("font-size", "13px")
+                        .style("fill","#888");
+                }
+
+                rightLabel.text("歌曲数量");
+
+
+                // chart axis
+                svg
+                    .append("g")
+                    .attr("class","song-freq-chart-axis")
+                    .attr("transform", "translate(0,110)")
+                    .call(d3.axisBottom(x)
+                        .tickValues(
+                            [2000,2005,2010,2015,2019]
+                        )
+                    )
+                    .call(g => g.select(".domain")
+                        .remove())
+                    .call(g => g.selectAll(".tick line")
+                        .remove());
+
+                // chart name
+                var textName = svg.select("text.textName");
+
+                if(textName.empty()){
+                    textName = svg.append("text")
+                        .attr("x", -73)
+                        .attr("y", 75)
+                        .style("font-weight","bold")
+                        .style("text-anchor", "middle")
+                        .style("font-size", "20px")
+                        .style("fill","#000");
+                }
+
+                textName.text(num[0].key.split("_")[0]);
+
+
+                /*
+                Upside chart
+                */
+
+                // newFreq = freq[0];
+
+                var x_list = [];
+                var rad_list =  [];
+
+                freq.forEach(function(d){
+                    d.values.forEach(function(d){
+                        x_list.push(x(d.year))
+                        rad_list.push(d.freq*10)
+                    })
+                    // return d;
+                    // console.log(d) 
+                });
+
+                var arc = d3.arc();
+
+                var halfcircle = function(x,y,rad, innerRad){
+                    return svg.append("path")
+                    .attr("transform", 'translate(' + [x,y] + ')' )
+                    .attr("d", arc({
+                        innerRadius: innerRad,
+                        outerRadius: rad,
+                        startAngle: Math.PI*0.5,
+                        endAngle: -Math.PI*0.5
+                    }));
+                };
+
+                x_list.forEach(function(x_num, i){
+                    
+                    const x = x_num + 10;
+                    const rad = rad_list[i];
+                    const y = 100;
+                    const innerRad = 0;
+                    // console.log(y, rad)
+
+                    var circles = halfcircle(x,y,rad, innerRad)
+                        .attr("class","upsideCircle")
+                        .style('opacity', 0)
+                        .transition()
+                        .duration(1000)
+                        .style('opacity',0.5)
+                        .style("stroke","#fff")
+                        .style("fill","#070d59");
                 });
                 // https://bl.ocks.org/gka/1623794a83a5daf18df0d93aa815fca7
 
@@ -321,39 +500,44 @@ if (isMobile){
                     return d.key=='周杰伦_0_0';
                 })
 
-
-                console.log(num)
-
                 var newNum = num.filter(function(d){
                     return d.key=='周杰伦_0_0';
                 })
 
 
                 updateBar(newFreq, newNum);
-                // updateBars(newData);
+                d3.selectAll(".downsideBar").style("opacity",0.1);
+                // d3.selectAll(".upsideCircle").style("opacity",0);
 
-                // d3.select(".downsideBar").style("opacity","0.5");
             }
 
             function update1_1(){
-
+                
             }
 
             function update1_up(){
+                d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",0.1);
+                
             }
 
             function update2(){
+                d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",1);
+
+                d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.1);
             }
 
             function update2_up(){
+                d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.1);
+
+                d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",1);
             }
 
             function update3(){
+                d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.5);
             }
 
             function update3_up(){
                 d3.select("#songs_frequency").select("svg").transition().duration(200).remove();
-
 
                 var newFreq = freq.filter(function(d){
                     return d.key=='周杰伦_0_0';
@@ -365,24 +549,14 @@ if (isMobile){
 
                 updateBar(newFreq, newNum);
 
-
-                // var newData = data.filter(function(d){
-                //     return d.key=='周杰伦_0_0';
-                // })
-
-                // updateBar(newData);
+                d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.5);
+                d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",0.1);
 
             }
 
             function update4(){
                 d3.select("#songs_frequency").select("svg").transition().duration(200).remove();
 
-                // var newData = data.filter(function(d){
-                //     return d.key=='林宥嘉_1_2';
-                // })
-                
-                // updateBar(newData);
-
                 var newFreq = freq.filter(function(d){
                     return d.key=='林宥嘉_1_2';
                 })
@@ -391,17 +565,13 @@ if (isMobile){
                     return d.key=='林宥嘉_1_2';
                 })
 
-                updateBar(newFreq, newNum);
+                updateBarAfter(newFreq, newNum);
             }
 
             function update5(){
                 d3.select("#songs_frequency").select("svg").transition().duration(200).remove();
 
-                // var newData = data.filter(function(d){
-                //     return d.key=='张杰_0_1';
-                // })
-                
-                // updateBar(newData);
+                d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.5);
 
                 var newFreq = freq.filter(function(d){
                     return d.key=='张杰_0_1';
@@ -411,17 +581,13 @@ if (isMobile){
                     return d.key=='张杰_0_1';
                 })
 
-                updateBar(newFreq, newNum);
+                updateBarAfter(newFreq, newNum);
             }
 
             function update6(){
                 d3.select("#songs_frequency").select("svg").transition().duration(200).remove();
 
-                // var newData = data.filter(function(d){
-                //     return (d.key=='周深_2_2');
-                // })
-                
-                // updateBar(newData);
+                d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.5);
 
                 var newFreq = freq.filter(function(d){
                     return d.key=='周深_2_2';
@@ -431,7 +597,7 @@ if (isMobile){
                     return d.key=='周深_2_2';
                 })
 
-                updateBar(newFreq, newNum);
+                updateBarAfter(newFreq, newNum);
             }
 
 
@@ -466,12 +632,14 @@ if (isMobile){
 
             // scrollama event handlers
             function handleStepEnter(response) {
-                // console.log(response)
-                // console.log(response.index)
+                console.log(response)
+                // console.log(updates[response.index])
 
                 if (response.direction =="down"){
+                    console.log(updates[response.index])
                     updates[response.index]();
                 } else if (response.direction == "up"){
+                    console.log(updates_up[response.index])
                     updates_up[response.index]();
                 };
             }
