@@ -129,6 +129,22 @@
                 fill: #000;
             }
 
+            .legend_1{
+                display: none;
+            }
+
+            .legend_2{
+                display: none;
+            }
+
+            .legend_3{
+                display: none;
+            }
+
+            .legend_4{
+                display: none;
+            }
+
         </style>
     
     <!-- boilerplate.css -->
@@ -180,27 +196,22 @@
 
                     <article>
                         <div class="step" data-step="1">
-                            <!-- <p>STEP 1</p> -->
                             <div class="step-text-container">
                                 <p>以2000年出道的周杰伦为例。</p>
-                                <!-- <p class="step-one-text1" style="opacity:0">左边代表周杰伦每年发歌的总数。</p> -->
                             </div>
                         </div>
 
                         <div class="step" data-step="2">
-                            <!-- <p>STEP 2</p> -->
 
                             <div class="step-text-container">
                                 <p>周董最活跃的早几年，2000年到2009年，他基本每年都会发表10首以上的歌，包括新曲和演唱会版本。</p>
                                 
                                 <p>即便在功成名就后，他只要发歌，一般都会以专辑形式发布。</p>
                             </div>
-                            <!-- <p>港台歌星和大陆歌星的习惯可能不太一样。以同样2000年左右出道的张杰为例。</p> -->
                         
                         </div>
 
                         <div class="step" data-step="3">
-                            <!-- <p>STEP 3</p> -->
                             <div class="step-text-container">
                                 <p>相比他的发歌数量，他的发歌频率并不高，最多最多一年也就发3次。</p>
                             </div>
@@ -241,7 +252,7 @@
                 <section id="outro"></section>
 
                 <div id="songs_frequency_all">
-                        <div class="chart-title">不同年代的华语歌手发歌数量和频率</div>
+                        <div class="chart-title" style="margin-bottom:20px;">不同年代的华语歌手发歌数量和频率</div>
                 </div>
                 
                 <div class="blog-content" style="margin-bottom:0px; margin-top: 20px">  
@@ -251,11 +262,6 @@
                         <p>但不得不说，我还是非常怀念一整张专辑的主题策划，能让歌手和作词作曲人拥有更多的表达空间。<img src="assets/img/M.png" style="width: 15px;" /></p>
     
                 </div>
-
-            
-                <!-- <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/56b13356149525.59a3325814a29.gif"/> -->
-
-
 
 
             </div>
@@ -272,6 +278,13 @@
         <script src="assets/scripts/scrollama.min.js"></script>
         <script src='assets/scripts/d3.v4.12.0+jetpack.min.js'></script>
         <script src="assets/scripts/songs-frequency.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(window).on('beforeunload', function() {
+                $('body').hide();
+                $(window).scrollTop(0);
+            });
+        </script>
     
     </body>
 </html>

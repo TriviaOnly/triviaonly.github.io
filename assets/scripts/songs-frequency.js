@@ -84,11 +84,9 @@ if (isMobile){
                     .style("fill", function(d, i) {
                         if (d.type=='专辑'){
                             return "#ee6f57";
-                        } else if (d.type=="主题曲"){
+                        } else if (d.type=="商业"){
                             return "#6a2c70";
                         } else if (d.type=="翻唱"){
-                            return "#b83b5e";
-                        } else if (d.type=="其它"){
                             return "#ffd57e";
                         }
                     })
@@ -123,13 +121,13 @@ if (isMobile){
                 Downside chart
                 */
                var svg = d3.select("#songs_frequency")
-               .append("svg")
-               .attr("width", "1000px")
-               .attr("height", "1000px")
-               .append("g")
-               .attr("transform", function(d){
-                   return "translate(300,50)"
-               });
+                .append("svg")
+                .attr("width", "1000px")
+                .attr("height", "800px")
+                .append("g")
+                .attr("transform", function(d){
+                    return "translate(300,50)"
+                })
 
 
                svg.selectAll(".bar")
@@ -189,6 +187,76 @@ if (isMobile){
 
                 textName.text(num[0].key.split("_")[0]);
 
+                // downside-lengend
+                // http://jsbin.com/ubafur/3/edit?html,js,output
+                var legend = svg.append("g")
+                    .attr("class","legend-box");
+
+                // 影视
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",-100)
+                    .attr("y",250)
+                    .attr("width", 20)
+                    .attr("height", 10)
+                    .style("fill","#ee6f57")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",-73)
+                    .attr("y",257)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("专辑");
+
+                // 主题曲营业类
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",-100)
+                    .attr("y",280)
+                    .attr("width", 20)
+                    .attr("height", 10)
+                    .style("fill","#6a2c70")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",-73)
+                    .attr("y",287)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("商业");
+
+                // 其它
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",-100)
+                    .attr("y",310)
+                    .attr("width", 20)
+                    .attr("height", 10)
+                    .style("fill","#ffd57e")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",-73)
+                    .attr("y",317)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("翻唱/重制");
 
                 /*
                 Upside chart
@@ -375,6 +443,79 @@ if (isMobile){
                 textName.text(num[0].key.split("_")[0]);
 
 
+                // downside-lengend
+                // http://jsbin.com/ubafur/3/edit?html,js,output
+                var legend = svg.append("g")
+                    .attr("class","legend-box");
+
+                // 影视
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",-100)
+                    .attr("y",250)
+                    .attr("width", 20)
+                    .attr("height", 10)
+                    .style("fill","#ee6f57")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",-73)
+                    .attr("y",257)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("专辑");
+
+                // 主题曲营业类
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",-100)
+                    .attr("y",280)
+                    .attr("width", 20)
+                    .attr("height", 10)
+                    .style("fill","#6a2c70")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",-73)
+                    .attr("y",287)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("商业");
+
+
+                // 其它
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",-100)
+                    .attr("y",310)
+                    .attr("width", 20)
+                    .attr("height", 10)
+                    .style("fill","#ffd57e")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",-73)
+                    .attr("y",317)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("翻唱/重制");
+
+
                 /*
                 Upside chart
                 */
@@ -507,6 +648,8 @@ if (isMobile){
 
                 updateBar(newFreq, newNum);
                 d3.selectAll(".downsideBar").style("opacity",0.1);
+
+                d3.select(".legend-box").style("opacity",0.1);
                 // d3.selectAll(".upsideCircle").style("opacity",0);
 
             }
@@ -517,11 +660,14 @@ if (isMobile){
 
             function update1_up(){
                 d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",0.1);
+
+                d3.select(".legend-box").transition().duration(1000).style("opacity",0.1);
                 
             }
 
             function update2(){
                 d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",1);
+                d3.select(".legend-box").transition().duration(1000).style("opacity",1);
 
                 d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.1);
             }
@@ -530,10 +676,14 @@ if (isMobile){
                 d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.1);
 
                 d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",1);
+                d3.select(".legend-box").transition().duration(1000).style("opacity",1);
             }
 
             function update3(){
                 d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.5);
+
+                d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",0.1);
+                d3.select(".legend-box").transition().duration(1000).style("opacity",0.1);
             }
 
             function update3_up(){
@@ -551,6 +701,7 @@ if (isMobile){
 
                 d3.selectAll(".upsideCircle").transition().duration(1000).style("opacity",0.5);
                 d3.selectAll(".downsideBar").transition().duration(1000).style("opacity",0.1);
+                // d3.select(".legend-box").transition().duration(1000).style("opacity",0.1);
 
             }
 
@@ -602,7 +753,7 @@ if (isMobile){
 
 
             function update7(){
-                d3.select("#songs_frequency").select("svg").transition().duration(500).remove();
+                d3.select("#songs_frequency").select("svg").transition().duration(1000).remove();
             }
 
 
@@ -651,17 +802,6 @@ if (isMobile){
             }
 
             function init() {
-
-                // var newFreq = freq.filter(function(d){
-                //     return d.key=='周杰伦_0_0';
-                // })
-
-                // var newNum = num.filter(function(d){
-                //     return d.key=='周杰伦_0_0';
-                // })
-
-                // console.log(newFreq)
-                // console.log(newNum)
                 
                 update1();
 
@@ -705,49 +845,6 @@ if (isMobile){
             });
 
 
-            // d3.queue()
-            //     .defer(d3.csv, "assets/data/202011/freq_of_publication.csv")
-            //     .defer(d3.csv, "assets/data/202011/number_of_songs.csv")
-            //     .await(function(error, freq, num) {
-            //         if(error) throw error;
-
-            //         // console.log(freq)
-            //         // console.log(num)
-
-
-
-            //         console.log(freq)
-            //         console.log(num)
-
-
-            //         init(freq, num);
-
-            //         // newNum = d3.nest()
-            //         //     .key(function(d){ return d.singer; })
-            //         //     .key(function(d){ return d.year; })
-            //         //     .key(function(d){ return d.type; })
-            //         //     .rollup(function(v){ return d3.sum(v, function(d){ return d.num; }); })
-            //         //     .entries(num);
-
-            //         // console.log(newNum)
-            // });
-
-
-            // d3.csv("assets/data/202011/freq_of_publication.csv", function(error, csv){
-            //     freq = d3.nest()
-            //         .key(function(d){ return d.singer_index; })
-            //         .entries(csv);
-
-            //     // kick things off
-            //     // init(data);
-            //     // updateBars();
-
-
-            //     init();
-
-            // })
-
-
 
 
 
@@ -777,16 +874,15 @@ if (isMobile){
 
                 var u = d3.select(this)
                     .attr("transform", function(d){
-                        // console.log(d.key.split("_")[1]*20)
-                        if ((d.key.split("_")[2]==0) && (d.key.split("_")[1] ==0)){
-                            return "translate(10,50)";
-                        } else if (d.key.split("_")[2]==0){
-                            return "translate(10," + d.key.split("_")[1]*320 + ")";
-                        } else if (d.key.split("_")[1] ==0){
-                            return "translate(" + d.key.split("_")[2]*200 + ",50)";
-                        } else {
-                            return "translate(" + d.key.split("_")[2]*200 + "," + d.key.split("_")[1]*320 + ")";
-                        }
+                        if (d.key.split("_")[1]==0){
+                            return "translate(" + d.key.split("_")[2]*220 + ",70)";
+                        } else if (d.key.split("_")[1] ==1){
+                            return "translate(" + d.key.split("_")[2]*220 + ",350)";
+                        } else if (d.key.split("_")[1] ==2){
+                            return "translate(" + d.key.split("_")[2]*220 + ",630)";
+                        } else if (d.key.split("_")[1] ==3){
+                            return "translate(" + d.key.split("_")[2]*220 + ",910)";
+                        } 
                     });
 
 
@@ -796,7 +892,7 @@ if (isMobile){
                     .enter()
                     .append("rect")
                     .merge(u)
-                    .attr("x", x(0) + 130)
+                    .attr("x", x(0) + 135)
                     .attr("y", function(d){
                             return y(d.year);
                     })
@@ -806,14 +902,11 @@ if (isMobile){
                     .attr("width", function(d){return x(d.freq); })
                     .attr("fill", function(d){
                         if (d.freq <= 5){
-                            return "#fcd9d9";
+                            return "#9f5f80";
                         } else if (d.freq>5){
-                            return "#ff4844";
+                            return "#583d72";
                         }
                     });
-                    // .attr("stroke", "rgba(0,0,0,0.5")
-                    // .attr("stroke-width", "0.5px");
-
 
                 // left chart
                 u.selectAll("rect.left")
@@ -832,47 +925,136 @@ if (isMobile){
                         .duration(1000)
                         .attr("width", function(d){return xLeft(d.num); })
                         .attr("x", function(d){
-                            return chartHeightAll - xLeft(d.num) - 98;
+                            return chartHeightAll - xLeft(d.num) - 103;
                         })
                         .attr("height", y.bandwidth())
                         .attr("fill", function(d){
-                            // return "#5c6e91";
-                            // if (d.num <= 10){
-                            //     return "#c65f63";
-                            // } else if ((d.num>10) && (d.num<=30)){
-                            //     return "#84577c";
-                            // } else if (d.num> 30){
-                            //     return "#333644";
-                            // }
                             if (d.num<25){
-                                return "#c1b4db";
+                                return "#ffba93";
                             } else if (d.num >= 25){
-                                return "#4c44fc";
+                                return "#ff8e71";
                             }
                         });
-                        // .attr("stroke", "rgba(0,0,0,0.5")
-                        // .attr("stroke-width", "0.5px");
 
-                // append line between axis
-                u.append("line")
-                        .style("stroke","black")
-                        .attr("x1", 130)
-                        .attr("x2", 130)
-                        .attr("y1", -5)
-                        .attr("y2",200)
-                        .style("stroke-width", "1px")
-                        .style("fill","#02030c");
-                        // .style("stroke-dasharray", ("3, 3"));
+                // legend
+                var legend = u.append("g")
+                    .attr("class","legend_" + d.key.split("_")[2]);
+                    // .attr("class","legend-box-all");
 
-                u.append("line")
-                        .style("stroke","black")
-                        .attr("x1", 102)
-                        .attr("x2", 102)
-                        .attr("y1", -5)
-                        .attr("y2",200)
-                        .style("stroke-width", "1px")
-                        .style("fill","#02030c");
-                        // .style("stroke-dasharray", ("3, 3"));
+                // 左边：歌曲数量
+                legend
+                    .append('text')
+                    .attr("x",0)
+                    .attr("y",10)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("歌曲数量");
+                
+                // < 25
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",0)
+                    .attr("y",20)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .style("fill","#ffba93")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",19)
+                    .attr("y",29)
+                    .style("font-family","'Roboto Mono', monospace")
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("< 25");
+
+                // >= 25
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",0)
+                    .attr("y",40)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .style("fill","#ffba93")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",19)
+                    .attr("y",49)
+                    .style("font-family","'Roboto Mono', monospace")
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text(">=25");
+
+
+                // 右边：发歌频率
+                legend
+                    .append('text')
+                    .attr("x",180)
+                    .attr("y",10)
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("发歌频率");
+                
+                // <= 5
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",181)
+                    .attr("y",20)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .style("fill","#9f5f80")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",207)
+                    .attr("y",29)
+                    .style("font-family","'Roboto Mono', monospace")
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text("<=5");
+
+                // > 5
+                legend
+                    .append('rect')
+                    .attr("class","legend")
+                    .attr("x",181)
+                    .attr("y",40)
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .style("fill","#583d72")
+                    .style("stroke","#fff");
+
+                legend
+                    .append('text')
+                    .attr("class","legend")
+                    .attr("x",207)
+                    .attr("y",49)
+                    .style("font-family","'Roboto Mono', monospace")
+                    .style("font-weight","regular")
+                    .style("text-anchor", "left")
+                    .style("font-size", "13px")
+                    .style("fill","#888")
+                    .text(">5");
                 
             }
 
@@ -924,7 +1106,7 @@ if (isMobile){
                         .style("font-weight","bold")
                         .style("text-anchor", "middle")
                         .style("font-size", "15px")
-                        .style("fill","#777");
+                        .style("fill","#000");
                 }
 
                 el.text(d.key.split("_")[0]);
@@ -940,9 +1122,9 @@ if (isMobile){
             function updateBarsAll(){
                 var u = d3.select("#songs_frequency_all")
                     .append("svg")
-                    .attr("width", "1000px")
-                    .attr("height", "1200px")
-                .selectAll("g")
+                    .attr("width", "1200px")
+                    .attr("height", "1135px")
+                    .selectAll("g")
                     .data(data);
 
                 u.enter()
@@ -952,6 +1134,11 @@ if (isMobile){
                     .each(updateBarAll)
                     .each(updateLabelAll)
                     .each(updateAxisAll);
+
+
+                u.append("g")
+                    .attr("class","divide");
+
 
                 u.exit().remove();
             }

@@ -18,7 +18,7 @@ if (isMobile){
 function songDesktop(){
 
     d3.queue()
-        .defer(d3.csv, "assets/data/202011/frequent_rhymns_treemap.csv")
+        .defer(d3.csv, "assets/data/202010/frequent_rhymns_treemap.csv")
         .await(ready);
 
     function ready(error, data){
@@ -130,7 +130,7 @@ function songDesktop(){
 function songMobile(){
 
     d3.queue()
-        .defer(d3.csv, "assets/data/202011/frequent_rhymns_df2.csv")
+        .defer(d3.csv, "assets/data/202010/frequent_rhymns_df2.csv")
         .await(ready);
 
     function ready(error, data){
