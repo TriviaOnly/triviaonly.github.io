@@ -261,6 +261,8 @@ function makeProgress(d,i){
 
 
 function makeCharts(){
+    // console.log(data)
+
     var u = d3.select("#chart")
         .select("svg")
         .selectAll("g")
@@ -277,6 +279,7 @@ function makeCharts(){
 
     u.exit().remove();
 }
+
 
 
 d3.csv("data/reading_example3.csv", function(err, csv) {

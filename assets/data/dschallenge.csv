@@ -1,0 +1,145 @@
+undergraduate_major,graduate_major,role,hours,undergraduate_short,graduate_short,hours_chinese
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,,Analyst,5-10 hours,science-related,None,5-10 小时
+"Science, Math, and Technology",Business,Leadership,1-5 hours,science-related,not-science-related,1-5 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+Social Sciences,,Analyst,5-10 hours,science-related,None,5-10 小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,1-5 hours,science-related,science-related,1-5 小时
+Arts and Humanities,,Developer,5-10 hours,not-science-related,None,5-10 小时
+Social Sciences,Social Sciences,Analyst,5-10 hours,science-related,science-related,5-10 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+Social Sciences,Multi-/Interdisciplinary Studies,Cartographer,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Developer,Less than 1 hour,science-related,None,少于1小时
+Business,,Analyst,Less than 1 hour,not-science-related,None,少于1小时
+"Science, Math, and Technology",Multi-/Interdisciplinary Studies,Leadership,5-10 hours,science-related,science-related,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Social Sciences,Analyst,Less than 1 hour,science-related,science-related,少于1小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,20-30 hours,science-related,science-related,20-30 小时
+Social Sciences,,Designer,Less than 1 hour,science-related,None,少于1小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+Health and Medicine,"Science, Math, and Technology",Developer,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Leadership,5-10 hours,science-related,None,5-10 小时
+Business,,Analyst,1-5 hours,not-science-related,None,1-5 小时
+Social Sciences,Social Sciences,Analyst,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Designer,1-5 hours,science-related,science-related,1-5 小时
+Arts and Humanities,,Designer,1-5 hours,not-science-related,None,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Designer,5-10 hours,science-related,science-related,5-10 小时
+Social Sciences,"Science, Math, and Technology",Designer,10-20 hours,science-related,science-related,10-20 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+Arts and Humanities,Multi-/Interdisciplinary Studies,Developer,1-5 hours,not-science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Developer,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Social Sciences,Developer,10-20 hours,science-related,science-related,10-20 小时
+Multi-/Interdisciplinary Studies,Multi-/Interdisciplinary Studies,Leadership,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Social Sciences,Leadership,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,"Science, Math, and Technology",Developer,5-10 hours,science-related,science-related,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+Business,"Science, Math, and Technology",Analyst,1-5 hours,not-science-related,science-related,1-5 小时
+Social Sciences,Social Sciences,Leadership,1-5 hours,science-related,science-related,1-5 小时
+Business,,Analyst,5-10 hours,not-science-related,None,5-10 小时
+Business,Business,Analyst,1-5 hours,not-science-related,not-science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,5-10 hours,science-related,science-related,5-10 小时
+Multi-/Interdisciplinary Studies,,Journalist,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology",,Developer,30-40 hours,science-related,None,30-40 小时
+Social Sciences,,Engineer,Less than 1 hour,science-related,None,少于1小时
+Social Sciences,Arts and Humanities,Leadership,5-10 hours,science-related,not-science-related,5-10 小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+Public and Social Services,Education,Leadership,1-5 hours,not-science-related,not-science-related,1-5 小时
+Arts and Humanities,Arts and Humanities,Designer,Less than 1 hour,not-science-related,not-science-related,少于1小时
+Arts and Humanities,,Cartographer,Less than 1 hour,not-science-related,None,少于1小时
+"Science, Math, and Technology",Business,Leadership,1-5 hours,science-related,not-science-related,1-5 小时
+Multi-/Interdisciplinary Studies,,Analyst,1-5 hours,science-related,None,1-5 小时
+Arts and Humanities,Business,Leadership,10-20 hours,not-science-related,not-science-related,10-20 小时
+Arts and Humanities,"Science, Math, and Technology",Analyst,5-10 hours,not-science-related,science-related,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+Arts and Humanities,Health and Medicine,Leadership,5-10 hours,not-science-related,science-related,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Engineer,Less than 1 hour,science-related,science-related,少于1小时
+Health and Medicine,Health and Medicine,Analyst,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Leadership,1-5 hours,science-related,None,1-5 小时
+Health and Medicine,"Science, Math, and Technology",Scientist,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,Less than 1 hour,science-related,science-related,少于1小时
+Arts and Humanities,"Science, Math, and Technology",Analyst,1-5 hours,not-science-related,science-related,1-5 小时
+"Science, Math, and Technology",Social Sciences,Designer,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",Business,Leadership,1-5 hours,science-related,not-science-related,1-5 小时
+"Science, Math, and Technology",,Developer,1-5 hours,science-related,None,1-5 小时
+Arts and Humanities,,Analyst,20-30 hours,not-science-related,None,20-30 小时
+Arts and Humanities,Arts and Humanities,Designer,5-10 hours,not-science-related,not-science-related,5-10 小时
+"Science, Math, and Technology",Social Sciences,Analyst,Less than 1 hour,science-related,science-related,少于1小时
+Social Sciences,,Analyst,1-5 hours,science-related,None,1-5 小时
+Business,,Analyst,Less than 1 hour,not-science-related,None,少于1小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+Arts and Humanities,Public and Social Services,Analyst,1-5 hours,not-science-related,not-science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Developer,Less than 1 hour,science-related,science-related,少于1小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+Social Sciences,,Analyst,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Journalist,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+Multi-/Interdisciplinary Studies,,Designer,5-10 hours,science-related,None,5-10 小时
+Multi-/Interdisciplinary Studies,,Analyst,10-20 hours,science-related,None,10-20 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,5-10 hours,science-related,science-related,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",Multi-/Interdisciplinary Studies,Analyst,10-20 hours,science-related,science-related,10-20 小时
+"Science, Math, and Technology","Science, Math, and Technology",Designer,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",Business,Leadership,1-5 hours,science-related,not-science-related,1-5 小时
+Arts and Humanities,,Designer,1-5 hours,not-science-related,None,1-5 小时
+Social Sciences,"Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+Arts and Humanities,Business,Designer,1-5 hours,not-science-related,not-science-related,1-5 小时
+Business,Business,Analyst,5-10 hours,not-science-related,not-science-related,5-10 小时
+Business,,Developer,1-5 hours,not-science-related,None,1-5 小时
+Social Sciences,,Analyst,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+"Science, Math, and Technology",,Scientist,1-5 hours,science-related,None,1-5 小时
+Business,Business,Analyst,Less than 1 hour,not-science-related,not-science-related,少于1小时
+Arts and Humanities,Arts and Humanities,Leadership,1-5 hours,not-science-related,not-science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,5-10 hours,science-related,science-related,5-10 小时
+Arts and Humanities,Arts and Humanities,Analyst,1-5 hours,not-science-related,not-science-related,1-5 小时
+Social Sciences,,Designer,1-5 hours,science-related,None,1-5 小时
+Arts and Humanities,Arts and Humanities,Designer,1-5 hours,not-science-related,not-science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Social Sciences,Analyst,1-5 hours,science-related,science-related,1-5 小时
+Arts and Humanities,Arts and Humanities,Analyst,10-20 hours,not-science-related,not-science-related,10-20 小时
+"Science, Math, and Technology","Science, Math, and Technology",Leadership,1-5 hours,science-related,science-related,1-5 小时
+Arts and Humanities,,Engineer,10-20 hours,not-science-related,None,10-20 小时
+Social Sciences,Social Sciences,Analyst,Less than 1 hour,science-related,science-related,少于1小时
+"Science, Math, and Technology","Science, Math, and Technology",Engineer,5-10 hours,science-related,science-related,5-10 小时
+"Science, Math, and Technology",,Analyst,Less than 1 hour,science-related,None,少于1小时
+"Science, Math, and Technology",,Designer,5-10 hours,science-related,None,5-10 小时
+Business,,Analyst,1-5 hours,not-science-related,None,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,Less than 1 hour,science-related,science-related,少于1小时
+Arts and Humanities,"Science, Math, and Technology",Engineer,5-10 hours,not-science-related,science-related,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,20-30 hours,science-related,science-related,20-30 小时
+"Science, Math, and Technology","Science, Math, and Technology",Developer,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Developer,5-10 hours,science-related,None,5-10 小时
+Social Sciences,Social Sciences,Scientist,1-5 hours,science-related,science-related,1-5 小时
+Business,,Developer,5-10 hours,not-science-related,None,5-10 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology",,Engineer,Less than 1 hour,science-related,None,少于1小时
+Arts and Humanities,Social Sciences,Analyst,1-5 hours,not-science-related,science-related,1-5 小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+"Science, Math, and Technology","Science, Math, and Technology",Leadership,5-10 hours,science-related,science-related,5-10 小时
+"Science, Math, and Technology",,Engineer,5-10 hours,science-related,None,5-10 小时
+Social Sciences,Social Sciences,Scientist,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Multi-/Interdisciplinary Studies,Journalist,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Social Sciences,Analyst,1-5 hours,science-related,science-related,1-5 小时
+Business,,Developer,Less than 1 hour,not-science-related,None,少于1小时
+Arts and Humanities,"Science, Math, and Technology",Engineer,1-5 hours,not-science-related,science-related,1-5 小时
+Social Sciences,,Analyst,5-10 hours,science-related,None,5-10 小时
+"Science, Math, and Technology",,Journalist,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology",Arts and Humanities,Designer,5-10 hours,science-related,not-science-related,5-10 小时
+"Science, Math, and Technology",,Analyst,1-5 hours,science-related,None,1-5 小时
+"Science, Math, and Technology",,Analyst,5-10 hours,science-related,None,5-10 小时
+Health and Medicine,Health and Medicine,Developer,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,"Science, Math, and Technology",Engineer,30-40 hours,science-related,science-related,30-40 小时
+"Science, Math, and Technology","Science, Math, and Technology",Scientist,Less than 1 hour,science-related,science-related,少于1小时
+Business,Business,Developer,1-5 hours,not-science-related,not-science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Developer,1-5 hours,science-related,science-related,1-5 小时
+Social Sciences,Business,Developer,1-5 hours,science-related,not-science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Engineer,1-5 hours,science-related,science-related,1-5 小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,Less than 1 hour,science-related,science-related,少于1小时
+Arts and Humanities,,Developer,Less than 1 hour,not-science-related,None,少于1小时
+"Science, Math, and Technology","Science, Math, and Technology",Analyst,Less than 1 hour,science-related,science-related,少于1小时
