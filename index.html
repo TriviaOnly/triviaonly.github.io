@@ -24,13 +24,17 @@
         <!-- <link href="css/scrolly.css" rel="stylesheet"> -->
 
         <style>
-            .ds_legend_0 .ds_legend_1 .ds_legend_3 .ds_legend_4 .ds_legend_5 {
-                display: None;
+            .chart-title{
+                font-size: 25px;
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                font-weight: 500;
+                /* text-transform: lowercase; */
             }
-/* 
-            .ds_legend_2 {
-                display: 
-            } */
+
+
+            }
 
         </style>
     
@@ -48,7 +52,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a class="text-dark nav-item" href="20201101.html">
+                            <a class="text-dark nav-item" href="20210116.html">
                                 上一篇
                             </a>
                             <!-- <a class="text-dark nav-item" href="index.html" style="margin-left:20px">
@@ -65,25 +69,57 @@
 
         <main role="main" class="container">
             <div class="blog-post">
-                <h2 class="blog-post-title">把数据可视化当爱好的人<br>都来自什么背景？</h2>
-                <p class="blog-post-meta" style="font-family: 'Roboto Mono', monospace;">vol. 202101</p>
+                <h2 class="blog-post-title">为什么饭圈控评文化<br/>招人反感</h2>
+                <p class="blog-post-meta" style="font-family: 'Roboto Mono', monospace;">vol. 202105</p>
 
                 <div class="blog-content" style="margin-bottom:0px">
-                    <p>第一次接触数据可视化时，我还在新闻学院，之后也一路在新闻业相关的实习和工作中断断续续地练习着。但随着关注这个领域越来越多，就会发现，很多对可视化充满热情和干劲的前辈们，都是和我背景完全不一样的人。</p>
+                    <p>如果饭圈仅是字面意思，即一群爱好相同的人组成的小圈子，那它的污名化确实没道理。</p>
+                        
+                    <p>但就像《警惕饭圈化》写道，<a class="highlight" href="https://www.yicai.com/news/100873169.html" target="_blank">现在一些极端的饭圈已经成为了具有极强动员能力的组织，它们用重复低质的内容填充各个平台，用简单粗暴的方式区分异己，在网络空间里攻击任何表达异议的人。</a></p>
 
-                    <p>这给我未来挑选研究生方向提供了一个新思路：是不是可以选择一个和新闻完全不搭边的专业，去弥补自己所欠缺的理科思维？但这又引发我另一个忧虑，要从文科转成理科是不是不太可能？</p>
+                    <p>近期让我感受最深的一件事，是<a class="highlight" href="https://weibo.com/1266269835/K5rEJauGc?refer_flag=1001030103_&type=comment#_rnd1620047329703" target="_blank">#肖战光点2020全球单曲畅销榜第七#</a>的热搜：在IFPI发布的这份排名里，肖战和 The Weekend、Roddy Ricch、 Dua Lipa 一同入榜，甚至还排在 Billie Eilish 之前……</p>
+                        
+                    <p>这合理吗？！出于对欧美音乐圈的薄弱认知和身为记者的最后一份理智，我想先看看其他网友的评论再下结论。然而，点开评论区的一瞬间，这里一片“祥和”的景色着实吓到我了。</p>
 
-                    <p>种种好奇，我决定看看<a class="highlight" href="https://github.com/data-visualization-society/data_visualization_survey/tree/master/data/2020" target="_blank">这份数据</a>中，像我一样业余时间做可视化的人们，都来自什么样的学科背景。<i>P.S：这是我参加 <a class="highlight" href="https://www.datavisualizationsociety.com/2020-survey-challenge" target="_blank">Data Visualization Census Survey 2020 Challenge</a> 作品的中文交互版。</i></p>
+                    <!-- data visualization -->
+                    <div class="chart-title">前1000条评论情感分布</div>
+                    <div id="observablehq-emotion_viz_1000-fc93c2ff" style="margin-bottom: 20px"></div>
+
+                    <script type="module">
+
+                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                        import define from "https://api.observablehq.com/@manyun_zou/weibo-comment-emotion-visualization.js?v=3";
+                        new Runtime().module(define, name => {
+                            if (name === "emotion_viz_1000") return new Inspector(document.querySelector("#observablehq-emotion_viz_1000-fc93c2ff"));
+                        });
+                    </script>
+
+                    <p>上图颜色越暖，表示情感越积极，比如“恭喜肖战！不得不说一句牛逼！早晚每天都听的歌！《光点》很喜欢”。</p>
+                    
+                    <p>颜色越冷，表示情感越负面，比如“不得不感叹中国粉丝的消费力多强以及审美多差”。前1000条评论中，这种冷言冷语的微博仅仅只有82条……我觉得更应该感叹的是肖战粉丝的控评能力！</p>
+
+                    <p>于是我再往下挖了挖，爬取了共计4198条评论，正常地球人都不可能爬到的楼层。</p>
+
+                    <!-- data visualization 02 -->
+                    <div class="chart-title">4198条评论情感分布</div>
+
+                    <div id="observablehq-emotion_viz-fc93c2ff" style="margin-bottom: 20px"></div>
+
+                    <script type="module">
+                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                        import define from "https://api.observablehq.com/@manyun_zou/weibo-comment-emotion-visualization.js?v=3";
+                        new Runtime().module(define, name => {
+                        if (name === "emotion_viz") return new Inspector(document.querySelector("#observablehq-emotion_viz-fc93c2ff"));
+                        });
+                    </script>
+
+                    <p>……果然，既然是“灌水”，当然得“灌”彻到底。这一片评论的汪洋大海中，想要找到点不同的意见真的太困难。这就是为什么我讨厌饭圈的控评文化：在这个已经有众多议题限制的网络空间中，娱乐话题本应该是最轻松自由的，然后，饭圈的控评文化正在剥夺这最后一点仅剩的自由。<img src="assets/img/M.png" style="width: 15px;" /></p>
+
+
 
                 </div>
                 <!-- end of blog content -->
 
-                <!-- data visualization -->
-                <div id="graphic">
-
-                </div>
-
-               
 
 
             </div>
@@ -97,7 +133,7 @@
         </footer>
 
         <script src='assets/scripts/d3.v4.12.0+jetpack.min.js'></script>
-        <script src="assets/scripts/dschallenge.js"></script>
+        <script src="assets/scripts/weiboComments.js"></script>
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     
     </body>

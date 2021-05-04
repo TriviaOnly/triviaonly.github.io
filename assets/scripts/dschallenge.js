@@ -19,7 +19,6 @@ function initializeData(){
 
 }
 
-
 var markTransform = [100, 300, 400, 800, 950, 1050];
 var bookNames = ['Less than 1 hour', '1-5 hours', '5-10 hours', '10-20 hours', '20-30 hours', '30-40 hours'];
 
@@ -33,10 +32,9 @@ function makeCircle(d,i){
             return "translate(50," + markTransform[a] + ')'
         })
         .selectAll("dot")
-        .append("circle")
         .data(d.values);
 
-    var underCircles = chart.enter()
+    var undergraduateCircles = chart.enter()
         .append("circle")
         .attr("class",function(d){
             return "undergraduate-circles";
@@ -64,35 +62,47 @@ function makeCircle(d,i){
 
     
     // add mouseover effect
-    // var tooltip = d3.select(".undergraduate-circles")
-    //         .
-
-    // underCircles
-    //     .on("mouseover", function(d){
-    //         d3.select(this).attr("transform","rotate(30 0 0)");
-    //         tooltip
-    //             .html(d.hours)
-    //             .style("left", (d3.event.pageX - 800) + "px")
-    //             .style("top", (d3.event.pageY) + "px")
-    //             .style("cursor", "pointer")
-    //             .style("opacity","0.8")
-    //             .style("visibility","visible");
-    //     })
-    //     .on("mouseout", function(d){
-    //         d3.select(this).attr("transform","rotate(0 0 0)");
-    //         tooltip.style("visibility","hidden");
-    //     });
+    var tooltip = d3.select(".undergraduate-circles")
+            .append("div")
+            .attr("class","legend")
+            .style("opacity",0)
+            .style("background-color", "black")
+            .style("border-radius", "5px")
+            .style("padding","10px")
+            .style("color","white");
 
 
-    // underCircles
-    //     .on("click", function(d){
-    //         d3.select(this).attr("transform","rotate(30 0 0)");
-    //         tooltip
-    //             .html(d.hours)
-    //             .style("left", (d3.event.pageX - 800) + "px")
-    //             .style("top", (d3.event.pageY - 28) + "px")
-    //             .style("visibility","visible");
-    //     });
+    var showTooltip = function(d){
+        console.log("hover!")
+        tooltip
+            .transition()
+            .duration(200)
+        tooltip
+            .style("opacity", 1)
+            .html(d.undergraduate_major)
+            .style("left", (d3.event.pageX + 30) + "px")
+            .style("top", (d3.event.pageY + 30) + "px")
+    }
+
+    // var moveTooltip = function(d){
+    //     console.log("move!!")
+    //     tooltip
+    //         .style("left", (d3.mouse(this)[0]) + "px")
+    //         .style("top", (d3.mouse(this)[1]) + "px")
+    // }
+
+    var hideTooltip = function(d){
+        console.log("hide!!")
+        tooltip
+            .transition()
+            .duration(200)
+            .style("opacity", 0)
+    }
+
+    undergraduateCircles
+        .on("mouseover", showTooltip)
+        // .on("mousemove", moveTooltip)
+        .on("mouseout", hideTooltip);
 
 
     chart.exit().remove();
