@@ -52,7 +52,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a class="text-dark nav-item" href="20210116.html">
+                            <a class="text-dark nav-item" href="20210513.html">
                                 上一篇
                             </a>
                             <!-- <a class="text-dark nav-item" href="index.html" style="margin-left:20px">
@@ -69,82 +69,29 @@
 
         <main role="main" class="container">
             <div class="blog-post">
-                <h2 class="blog-post-title">为什么饭圈控评文化<br/>招人反感</h2>
-                <p class="blog-post-meta" style="font-family: 'Roboto Mono', monospace;">vol. 202105</p>
+                <h2 class="blog-post-title">至今我还没听完的播客们</h2>
+                <p class="blog-post-meta" style="font-family: 'Roboto Mono', monospace;">vol. 202106</p>
 
-                <div class="blog-content" style="margin-bottom:0px">                        
-                    <p>《警惕饭圈化》一文曾写道，<a class="highlight" href="https://www.yicai.com/news/100873169.html" target="_blank">现在一些极端的饭圈已经成为了具有极强动员能力的组织，它们用重复低质的内容填充各个平台，用简单粗暴的方式区分异己，在网络空间里攻击任何表达异议的人。</a></p>
+                <div class="blog-content" style="margin-bottom:0px">
+                                       
+                    <p>昨天拿起小宇宙一看，自己竟然已经听够了300小时的播客。这小时数听起来可能并不惊人，但对于吸收新知懒癌患者的本人来说，实属不易。我可是宁愿重播甄嬛传武林外准老友记千万次，也懒得打开新剧的人呀！</p>
 
-                    <p>近期让我感受最深的一件事，是<a class="highlight" href="https://weibo.com/1266269835/K5rEJauGc?refer_flag=1001030103_&type=comment#_rnd1620047329703" target="_blank">#肖战光点2020全球单曲畅销榜第七#</a>的热搜：在IFPI发布的这份排名里，肖战甚至还排在 Billie Eilish 之前……这合理吗？！出于对欧美音乐圈的薄弱认知，我想先看看其他网友的评论再下结论。然而，点开评论区的一瞬间，这里一片“祥和”的景色着实吓到我了。</p>
-
-                    <p>下图<span style="background-color: rgb(245, 117, 69); color: white;">颜色越暖，表示情感越积极</span>，比如“恭喜肖战！不得不说一句牛逼！早晚每天都听的歌！《光点》很喜欢”。<span style="background-color: rgb(0, 122, 189); color: white;">颜色越冷，表示情感越负面</span>，比如“不得不感叹中国粉丝的消费力多强以及审美多差”。</p>
-
-                    <!-- data visualization -->
-                    <div class="chart-title xiaozhan-chart-title">前1000条评论情感分布</div>
-                    <div id="observablehq-emotion_viz_1000-fc93c2ff" style="margin-bottom: 20px"></div>
-
-
-                    <img class="xiaozhan-mobile img-fluid" src="assets/img/xiaozhan_weibo.jpg"/>
-
-                    <script type="module">
-
-                        var isMobile = window.screen.width < 420 ? true : false
-
-                        if (isMobile){
-                            d3.select("#observablehq-emotion_viz_1000-fc93c2ff").style("display","none");
-                            d3.select(".xiaozhan-mobile").style("display","inline-block").style("margin-bottom","30px");
-                            d3.select(".xiaozhan-chart-title").style("display","none");
-                        } else {
-                            d3.select(".xiaozhan-mobile").style("display","none");
-                            // d3.select(".xiaozhan-chart-title").style("display","inline");
-                            d3.select("#observablehq-emotion_viz_1000-fc93c2ff").style("display","inline");
-                        }
-
-                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                        import define from "https://api.observablehq.com/@manyun_zou/weibo-comment-emotion-visualization.js?v=3";
-                        new Runtime().module(define, name => {
-                            if (name === "emotion_viz_1000") return new Inspector(document.querySelector("#observablehq-emotion_viz_1000-fc93c2ff"));
-                        });
-
-
-                    </script>
+                    <p>不过，从2020年早春安装了小宇宙到现在，我的播放列表里还是留存了一票至今也没能听完的播客（捂脸）。因此，为了庆祝自己终于打破了300小时的关口，我决定来总结一下这些播放列表里的“遗珠”们。</p>
                     
-                    <p>前1000条评论中，这种冷言冷语的微博仅仅只有82条……和肖战粉丝的购买力一样，这些粉丝的控评能力也非常可怕。</p>
-
-                    <p class="paragraph-xiaozhan">于是我再往下挖了挖，爬取了共计4198条评论，正常地球人都不可能爬到的楼层。不出所料，评论区是发了大水般的正能量。同样，下图<span style="background-color: rgb(245, 117, 69); color: white;">颜色越暖，表示情感越积极</span>，<span style="background-color: rgb(0, 122, 189); color: white;">颜色越冷，表示情感越负面</span>。</p>
-
-                    <!-- data visualization 02 -->
-                    <div class="chart-title xiaozhan-chart-title2">4198条评论情感分布</div>
-
-                    <div id="observablehq-emotion_viz-fc93c2ff" style="margin-bottom: 20px"></div>
-
-                    <script type="module">
-                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                        import define from "https://api.observablehq.com/@manyun_zou/weibo-comment-emotion-visualization.js?v=3";
-                        new Runtime().module(define, name => {
-                        if (name === "emotion_viz") return new Inspector(document.querySelector("#observablehq-emotion_viz-fc93c2ff"));
-                        });
-
-                        var isMobile = window.screen.width < 420 ? true : false
-                        if (isMobile){
-                            d3.select(".paragraph-xiaozhan").style("display","none");
-                            d3.select(".xiaozhan-chart-title2").style("display","none");
-                            d3.select("#observablehq-emotion_viz-fc93c2ff").style("display","none");
-                        } else {
-                            d3.select(".paragraph-xiaozhan").style("display","inline");
-                            // d3.select(".xiaozhan-chart-title2").style("display","inline");
-                            d3.select("#observablehq-emotion_viz-fc93c2ff").style("display","inline");
-                        }
-
-                    </script>
-
-                    <p>既然是“灌水”，当然得“灌”彻到底。这一片评论的汪洋大海中，想要找到点不同的意见真的太困难。这就是为什么我讨厌饭圈的控评文化：在这个已经有众多议题限制的网络空间中，娱乐话题本应该是最轻松自由的，然后，饭圈的控评文化正在剥夺这最后一点仅剩的自由。<img src="assets/img/M.png" style="width: 15px;" /></p>
-
-
-
                 </div>
                 <!-- end of blog content -->
 
+                <!-- data visualization legend-->
+                <div id="graphic-legend" style="margin-bottom: 20px"></div>
+
+                <!-- data visualization -->
+                <div id="graphic"></div>
+
+
+                <div class="blog-content" style="margin-bottom:0px">
+                    <p style="text-align: center; color: #999">Viz inspired by <a class="highlight" href="https://www.behance.net/gallery/20040801/Lets-stay-home-La-Lettura?tracking_source=search_projects_recommended%7Cdata%20viz%20visualization">"Let's Stay Home" project from Behance</a>.</p>
+                    
+                </div>
 
 
             </div>
@@ -158,7 +105,7 @@
         </footer>
 
         <script src='assets/scripts/d3.v4.12.0+jetpack.min.js'></script>
-        <script src="assets/scripts/weiboComments.js"></script>
+        <script src="assets/scripts/unfinished-podcasts.js"></script>
         <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     
     </body>
