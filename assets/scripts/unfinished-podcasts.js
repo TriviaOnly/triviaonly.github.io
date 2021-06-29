@@ -10,6 +10,8 @@ function initializeData(){
     data = d3.nest()
         .key(function(d){ return d.group;})
         .entries(data);
+
+    console.log(data)
 }
 
 var markTransform = [20, 170, 320, 470, 620, 770];
@@ -141,19 +143,90 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#f1ffcf")
-        .attr("cx", 610)
+        .attr("cx", 600)
         .attr("cy", 30)
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 625)
+        .attr("x", 615)
         .attr("y", 30) 
         .attr("dy", ".35em") 
         .text("政治")
         .style("font-family","roboto")
         .style("font-size","12px");
 
+
+}
+
+// data visualization
+// draw the year line
+function makeLines(d,i){
+    var chart = d3.select(this)
+        .attr("transform", function(d){
+            var a = groupNames.indexOf(d.key);
+            return "translate(50," + markTransform[a] + ')'
+        })
+        .selectAll(".dots")
+        .data(d.values);
+
+    // var x = d3.scaleLinear()
+    //     .domain([2020,2021])
+    //     .range([1,10]);
+    
+    chart.enter()
+        .append("rect")
+        .attr("class",function(d){
+            return d.group + '-' + d.name + '-listened';
+        })
+        .attr("x", function(d,i){
+            return i%rectPerRow * tilePadding - 20;
+        })
+        .attr("width", function(d){
+            if (d.published_year == '2020'){
+                return 25;
+            } else if (d.published_year == '2021'){
+                return 50;
+            }
+        })
+        .attr("y", function(d,i){
+            var rowNumber = Math.floor(i / rectPerRow);
+            return  (rowNumber) * tileTopPadding - 18;
+        })
+        .attr("height", 1)
+        .style("fill-opacity", "0")
+        .style("stroke","#000")
+        // .style("stroke-width", "0.")
+        .style("opacity","1");
+    
+
+    chart.enter()
+        .append("text")
+        .attr("x", function(d,i){
+                return i%rectPerRow * tilePadding - 20;
+        })
+        .attr("y", function(d,i){ // 听完时长
+            if (d.name == "詹青云：性别意识有了就不会再消失，判断是非需要法律更需要人性") {
+                return d.listened - 30;
+            } else if (d.name == '《王冠》之下 英国王室的前世今生'){
+                return d.listened - 32;
+            } else if (d.name == '跟冯大辉聊聊做互联网的一些大观察和小感触'){
+                return d.listened - 54;
+            }
+        }) 
+        .attr("dy", ".35em") 
+        .text(function(d,i) { 
+            if (d.name == "詹青云：性别意识有了就不会再消失，判断是非需要法律更需要人性") {
+                return '2021年发布';
+            } else if (d.name == '《王冠》之下 英国王室的前世今生'){
+                return '2020年发布'; 
+            } else if (d.name == '跟冯大辉聊聊做互联网的一些大观察和小感触'){
+                return '2020年发布';
+            }
+        })
+        .style("font-family","roboto")
+        .style("font-size","12px");
+    
 
 }
 
@@ -543,17 +616,21 @@ function makeCharts(){
         .append("g")
         .merge(u)
         .each(makeRect) // 画出每集播客的总时长
-        .each(makeListened); // 画出目前听完的时长
+        .each(makeListened) // 画出目前听完的时长
+        .each(makeLines); // 标出年份
 
     u.exit().remove();
 }
 
 
 
+
 d3.csv("assets/data/202106/unlistened-podcast.csv", function(err, csv){
     data = csv;
     initializeData();
-    makeCharts();
-    makeLegend();
+    makeCharts(); // data viz
+    makeLegend(); // legend
 })
+
+
 
