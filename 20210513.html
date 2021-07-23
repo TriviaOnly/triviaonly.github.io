@@ -111,32 +111,7 @@
                     
                     <p>前1000条评论中，这种冷言冷语的微博仅仅只有82条……和肖战粉丝的购买力一样，这些粉丝的控评能力也非常可怕。</p>
 
-                    <p class="paragraph-xiaozhan">于是我再往下挖了挖，爬取了共计4198条评论，正常地球人都不可能爬到的楼层。不出所料，评论区是发了大水般的正能量。同样，下图<span style="background-color: rgb(245, 117, 69); color: white;">颜色越暖，表示情感越积极</span>，<span style="background-color: rgb(0, 122, 189); color: white;">颜色越冷，表示情感越负面</span>。</p>
-
-                    <!-- data visualization 02 -->
-                    <div class="chart-title xiaozhan-chart-title2">4198条评论情感分布</div>
-
-                    <div id="observablehq-emotion_viz-fc93c2ff" style="margin-bottom: 20px"></div>
-
-                    <script type="module">
-                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                        import define from "https://api.observablehq.com/@manyun_zou/weibo-comment-emotion-visualization.js?v=3";
-                        new Runtime().module(define, name => {
-                        if (name === "emotion_viz") return new Inspector(document.querySelector("#observablehq-emotion_viz-fc93c2ff"));
-                        });
-
-                        var isMobile = window.screen.width < 420 ? true : false
-                        if (isMobile){
-                            d3.select(".paragraph-xiaozhan").style("display","none");
-                            d3.select(".xiaozhan-chart-title2").style("display","none");
-                            d3.select("#observablehq-emotion_viz-fc93c2ff").style("display","none");
-                        } else {
-                            d3.select(".paragraph-xiaozhan").style("display","inline");
-                            // d3.select(".xiaozhan-chart-title2").style("display","inline");
-                            d3.select("#observablehq-emotion_viz-fc93c2ff").style("display","inline");
-                        }
-
-                    </script>
+                    <p class="paragraph-xiaozhan">于是我再往下挖了挖，爬取了共计4198条评论，正常地球人都不可能爬到的楼层。不出所料，评论区是发了大水般的正能量。</p>
 
                     <p>既然是“灌水”，当然得“灌”彻到底。这一片评论的汪洋大海中，想要找到点不同的意见真的太困难。这就是为什么我讨厌饭圈的控评文化：在这个已经有众多议题限制的网络空间中，娱乐话题本应该是最轻松自由的，然后，饭圈的控评文化正在剥夺这最后一点仅剩的自由。<img src="assets/img/M.png" style="width: 15px;" /></p>
 
