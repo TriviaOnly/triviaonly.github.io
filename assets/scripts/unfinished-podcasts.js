@@ -1,5 +1,6 @@
 var isMobile = window.screen.width < 540 ? true : false;
 var isTablet = window.screen.width < 1000 ? true : false;
+var isIpadPro = window.screen.width < 1240 ? true : false;
 
 
 // square attributes
@@ -23,6 +24,10 @@ if (isMobile){
     var groupNames = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'];
 
 } else if (isTablet){
+    var markTransform = [20, 170, 320, 470, 620, 770, 920, 1070, 1220, 1370];
+    var groupNames = ['A','B','C','D','E','F','G','H','I','J'];
+
+} else if (isIpadPro){
     var markTransform = [20, 170, 320, 470, 620, 770, 920, 1070, 1220, 1370];
     var groupNames = ['A','B','C','D','E','F','G','H','I','J'];
 
@@ -59,6 +64,8 @@ function makeLegend(){
                 return "translate(15,0)"
             } else if (isTablet){
                 return "translate(98,0)"
+            } else if (isIpadPro){
+                return "translate(78,0)";
             } else {
                 return "translate(100,0)";
             }
@@ -859,6 +866,8 @@ function makeCharts(){
                 return "1800"
             } else if (isTablet){
                 return "1500";
+            } else if (isIpadPro){
+                return "1500";
             } else {
                 return "920";
             }
@@ -877,6 +886,8 @@ function makeCharts(){
                 return "translate(0,0)";
             } else if (isTablet){
                 return "translate(80,0)";
+            } else if (isIpadPro){
+                return "translate(180,0)";
             } else {
                 return "translate(100,0)";
             }
@@ -905,6 +916,15 @@ if (isMobile){
     })
 
 } else if (isTablet){
+    console.log("tablet!")
+    d3.csv("assets/data/202106/unlistened-podcast-tablet.csv", function(err, csv){
+        data = csv;
+        initializeData();
+        makeCharts(); // data viz
+        makeLegend(); // legend
+    })
+
+} else if (isIpadPro){
     console.log("tablet!")
     d3.csv("assets/data/202106/unlistened-podcast-tablet.csv", function(err, csv){
         data = csv;
