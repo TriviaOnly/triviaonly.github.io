@@ -206,7 +206,7 @@ function makeLegend(){
         // .attr("cx", 370)
         .attr("cx", function(d){
             if (isMobile){
-                return 250;
+                return 270;
             } else if (isTablet){
                 return 250;
             } else {
@@ -229,7 +229,7 @@ function makeLegend(){
         // .attr("x", 385)
         .attr("x", function(d){
             if (isMobile){
-                return 265;
+                return 285;
             } else if (isTablet){
                 return 265;
             } else {
@@ -366,7 +366,7 @@ function makeLegend(){
         // .attr("cy", 30)
         .attr("cx", function(d){
             if (isMobile){
-                return 250;
+                return 270;
             } else if (isTablet){
                 return 250+70*3+10;
             } else {
@@ -390,7 +390,7 @@ function makeLegend(){
         // .attr("y", 30) 
         .attr("x", function(d){
             if (isMobile){
-                return 265;
+                return 285;
             } else if (isTablet){
                 return 250+70*3+10+15;
             } else {
