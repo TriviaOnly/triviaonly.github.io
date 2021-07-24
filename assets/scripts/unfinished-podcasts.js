@@ -1,3 +1,7 @@
+var isMobile = window.screen.width < 540 ? true : false;
+var isTablet = window.screen.width < 1000 ? true : false;
+
+
 // square attributes
 var tileWidth = 40;
 var tileHeight = 10;
@@ -14,11 +18,24 @@ function initializeData(){
     console.log(data)
 }
 
-var markTransform = [20, 170, 320, 470, 620, 770];
-var groupNames = ['A','B','C','D','E','F'];
+if (isMobile){
+    var markTransform = [20, 170, 320, 470, 620, 770, 920, 1070, 1220, 1370, 1520, 1670,1820, 1970, 2120];
+    var groupNames = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O'];
+
+} else if (isTablet){
+    var markTransform = [20, 170, 320, 470, 620, 770, 920, 1070, 1220, 1370];
+    var groupNames = ['A','B','C','D','E','F','G','H','I','J'];
+
+} else {
+    var markTransform = [20, 170, 320, 470, 620, 770];
+    var groupNames = ['A','B','C','D','E','F'];
+
+}
+
 var rectTypes = ['个人知识','科技','性别','影视','杂七杂八','政治'];
 var color = d3.scaleOrdinal().domain(rectTypes)
-  .range(["#fff393","#4eb4f9","#ffd7ea","#ff9773","#00dd90","#f1ffcf"]);
+    .range(["#fff393","#4eb4f9","#ffd7ea","#ff9773","#00dd90","#f1ffcf"]);
+
 
 // episode tooltip
 var div = d3.select("body")
@@ -37,13 +54,38 @@ function makeLegend(){
         .append("svg")
         .attr("height","50")
         .attr("width","1000")
-        .attr("transform","translate(100,0)")
+        .attr("transform",function(d){
+            if (isMobile){
+                return "translate(15,0)"
+            } else if (isTablet){
+                return "translate(98,0)"
+            } else {
+                return "translate(100,0)";
+            }
+        })
         .data(data);
 
     svg
         .append("text")
-        .attr("x", 120)
-        .attr("y", 30) 
+        .attr("x", function(d){
+            if (isMobile){
+                return 0;
+            } else if (isTablet){
+                return 0;
+            } else {
+                return 120;
+            }
+        })
+        // .attr("y", 30) 
+        .attr("y", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("播客类别：")
         .style("font-family","roboto")
@@ -53,14 +95,47 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#fff393")
-        .attr("cx", 200)
-        .attr("cy", 30)
+        .attr("cx", function(d){
+            if (isMobile){
+                return 80;
+            } else if (isTablet){
+                return 80;
+            } else {
+                return 200;
+            }
+        })
+        .attr("cy", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 215)
-        .attr("y", 30) 
+        // .attr("x", 215)
+        .attr("x", function(d){
+            if (isMobile){
+                return 95;
+            } else if (isTablet){
+                return 95;
+            } else {
+                return 215;
+            }
+        })
+        .attr("y", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("个人知识")
         .style("font-family","roboto")
@@ -70,14 +145,47 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#4eb4f9")
-        .attr("cx", 300)
-        .attr("cy", 30)
+        .attr("cx", function(d){
+            if (isMobile){
+                return 180;
+            } else if (isTablet){
+                return 180;
+            } else {
+                return 300;
+            }
+        })
+        .attr("cy", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 315)
-        .attr("y", 30) 
+        // .attr("x", 315)
+        .attr("x", function(d){
+            if (isMobile){
+                return 195;
+            } else if (isTablet){
+                return 195;
+            } else {
+                return 315;
+            }
+        })
+        .attr("y", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("科技")
         .style("font-family","roboto")
@@ -88,14 +196,48 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#ffd7ea")
-        .attr("cx", 370)
-        .attr("cy", 30)
+        // .attr("cx", 370)
+        .attr("cx", function(d){
+            if (isMobile){
+                return 250;
+            } else if (isTablet){
+                return 250;
+            } else {
+                return 370;
+            }
+        })
+        .attr("cy", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 385)
-        .attr("y", 30) 
+        // .attr("x", 385)
+        .attr("x", function(d){
+            if (isMobile){
+                return 265;
+            } else if (isTablet){
+                return 265;
+            } else {
+                return 385;
+            }
+        })
+        .attr("y", function(d){
+            if (isMobile){
+                return 10;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("性别")
         .style("font-family","roboto")
@@ -106,14 +248,48 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#ff9773")
-        .attr("cx", 440)
-        .attr("cy", 30)
+        // .attr("cx", 440)
+        // .attr("cy", 30)
+        .attr("cx", function(d){
+            if (isMobile){
+                return 80;
+            } else if (isTablet){
+                return 250+70;
+            } else {
+                return 440;
+            }
+        })
+        .attr("cy", function(d){
+            if (isMobile){
+                return 40;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 455)
-        .attr("y", 30) 
+        .attr("x", function(d){
+            if (isMobile){
+                return 95;
+            } else if (isTablet){
+                return 250+70+15;
+            } else {
+                return 455;
+            }
+        })
+        .attr("y", function(d){
+            if (isMobile){
+                return 40;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("影视")
         .style("font-family","roboto")
@@ -125,14 +301,50 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#00dd90")
-        .attr("cx", 510)
-        .attr("cy", 30)
+        // .attr("cx", 510)
+        // .attr("cy", 30)
+        .attr("cx", function(d){
+            if (isMobile){
+                return 180;
+            } else if (isTablet){
+                return 250+70*2;
+            } else {
+                return 510;
+            }
+        })
+        .attr("cy", function(d){
+            if (isMobile){
+                return 40;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 525)
-        .attr("y", 30) 
+        // .attr("x", 525)
+        // .attr("y", 30) 
+        .attr("x", function(d){
+            if (isMobile){
+                return 195;
+            } else if (isTablet){
+                return 250+70*2+15;
+            } else {
+                return 525;
+            }
+        })
+        .attr("y", function(d){
+            if (isMobile){
+                return 40;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("杂七杂八")
         .style("font-family","roboto")
@@ -143,14 +355,50 @@ function makeLegend(){
     svg
         .append("circle")
         .style("fill","#f1ffcf")
-        .attr("cx", 600)
-        .attr("cy", 30)
+        // .attr("cx", 600)
+        // .attr("cy", 30)
+        .attr("cx", function(d){
+            if (isMobile){
+                return 250;
+            } else if (isTablet){
+                return 250+70*3+10;
+            } else {
+                return 600;
+            }
+        })
+        .attr("cy", function(d){
+            if (isMobile){
+                return 40;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("r", 10);
 
     svg
         .append("text")
-        .attr("x", 615)
-        .attr("y", 30) 
+        // .attr("x", 615)
+        // .attr("y", 30) 
+        .attr("x", function(d){
+            if (isMobile){
+                return 265;
+            } else if (isTablet){
+                return 250+70*3+10+15;
+            } else {
+                return 615;
+            }
+        })
+        .attr("y", function(d){
+            if (isMobile){
+                return 40;
+            } else if (isTablet){
+                return 10;
+            } else {
+                return 30;
+            }
+        })
         .attr("dy", ".35em") 
         .text("政治")
         .style("font-family","roboto")
@@ -606,9 +854,33 @@ function makeCharts(){
 
     var u = d3.select("#graphic")
         .append("svg")
-        .attr("height","920")
-        .attr("width","1000")
-        .attr("transform","translate(100,0)")
+        .attr("height",function(d){
+            if (isMobile){
+                return "1800"
+            } else if (isTablet){
+                return "1500";
+            } else {
+                return "920";
+            }
+        })
+        .attr("width",function(d){
+            if (isMobile){
+                return "400";
+            } else if (isTablet){
+                return "600";
+            } else {
+                return "1000";
+            }
+        })
+        .attr("transform",function(d){
+            if (isMobile){
+                return "translate(0,0)";
+            } else if (isTablet){
+                return "translate(80,0)";
+            } else {
+                return "translate(100,0)";
+            }
+        })
         .selectAll("g")
         .data(data);
 
@@ -623,14 +895,35 @@ function makeCharts(){
 }
 
 
+if (isMobile){
+    console.log("mobile!")
+    d3.csv("assets/data/202106/unlistened-podcast-mobile.csv", function(err, csv){
+        data = csv;
+        initializeData();
+        makeCharts(); // data viz
+        makeLegend(); // legend
+    })
 
+} else if (isTablet){
+    console.log("tablet!")
+    d3.csv("assets/data/202106/unlistened-podcast-tablet.csv", function(err, csv){
+        data = csv;
+        initializeData();
+        makeCharts(); // data viz
+        makeLegend(); // legend
+    })
 
-d3.csv("assets/data/202106/unlistened-podcast.csv", function(err, csv){
-    data = csv;
-    initializeData();
-    makeCharts(); // data viz
-    makeLegend(); // legend
-})
+} else {
+    d3.csv("assets/data/202106/unlistened-podcast.csv", function(err, csv){
+        data = csv;
+        initializeData();
+        makeCharts(); // data viz
+        makeLegend(); // legend
+    })
+    
+
+}
+
 
 
 
